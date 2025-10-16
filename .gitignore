@@ -1,3 +1,12 @@
+
+.DS_Store
+design/
+archive/
+*.psd
+*.tar.gz
+*.gz
+*.zip
+
 # Logs
 logs
 *.log
