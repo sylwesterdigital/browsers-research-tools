@@ -1,0 +1,34 @@
+{
+  "browser": "firefox",
+  "browser_version": "142.0.1",
+  "id": "avif",
+  "label": "AVIF",
+  "format": "avif",
+  "notes": "",
+  "run": 3,
+  "samples": [
+    {
+      "t": 107,
+      "completeness": 1
+    },
+    {
+      "t": 302,
+      "completeness": 1
+    },
+    {
+      "t": 491,
+      "completeness": 1
+    },
+    {
+      "t": 677,
+      "completeness": 1
+    },
+    {
+      "t": 865,
+      "completeness": 1
+    }
+  ],
+  "t85": 107,
+  "t95": 107,
+  "visIndex": 0
+}

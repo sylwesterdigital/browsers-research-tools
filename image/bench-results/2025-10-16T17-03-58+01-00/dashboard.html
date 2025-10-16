@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Progressive Image Bench – 2025-10-16T17-03-58+01-00</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<style>
+  :root { --card-min-h: 320px; }
+  html, body { height: 100%; }
+  body { font: 14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui; margin: 16px; }
+  h1 { font-size: 20px; margin: 0 0 8px; }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .card { padding: 12px; border: 1px solid #e3e3e3; border-radius: 10px; background: #fff; }
+  .plot { width: 100%; min-height: var(--card-min-h); }
+  .table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  .table th, .table td { border-bottom: 1px solid #eee; padding: 6px 8px; text-align: left; }
+  .small { color:#666; font-size:12px; }
+  .kv { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:10px; }
+  .kv div { background:#f7f7f7; border-radius:8px; padding:6px 8px; }
+  @media (min-width: 1100px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<h1>Progressive Image Bench – 2025-10-16T17-03-58+01-00</h1>
+<div class="small">Config: <code>bench.config.json</code></div>
+
+<div class="card" id="meta"></div>
+
+<div class="grid">
+  <div class="card"><div id="box_t85" class="plot"></div></div>
+  <div class="card"><div id="box_t95" class="plot"></div></div>
+  <div class="card"><div id="box_vi" class="plot"></div></div>
+  <div class="card"><div id="bars_median" class="plot"></div></div>
+  <div class="card">
+    <table class="table" id="summary"></table>
+  </div>
+</div>
+
+<script>
+const aggregated = [{"browser":"chromium","browser_version":"141.0.7390.37","id":"jpeg-baseline","label":"JPEG Baseline","format":"jpeg","notes":"","dist":{"count":5,"t85":[2378,2355,2398,2341,2393],"t95":[2378,2355,2398,2341,2393],"visIndex":[0.6046,0.6074,0.6323,0.597,0.6293]},"median":{"t85":2378,"t95":2378,"visIndex":0.6074},"p10":{"t85":2346.6,"t95":2346.6,"visIndex":0.60004},"p90":{"t85":2396,"t95":2396,"visIndex":0.6311},"errors":[]},{"browser":"chromium","browser_version":"141.0.7390.37","id":"jpeg-progressive","label":"JPEG Progressive","format":"jpeg","notes":"","dist":{"count":5,"t85":[1290,1294,1310,1295,1292],"t95":[1290,1294,1310,1295,1292],"visIndex":[0.3324,0.333,0.336,0.3331,0.3417]},"median":{"t85":1294,"t95":1294,"visIndex":0.3331},"p10":{"t85":1290.8000000000002,"t95":1290.8000000000002,"visIndex":0.33264},"p90":{"t85":1304,"t95":1304,"visIndex":0.33942000000000005},"errors":[]},{"browser":"chromium","browser_version":"141.0.7390.37","id":"webp","label":"WebP","format":"webp","notes":"","dist":{"count":5,"t85":[3306,3300,3298,3366,3301],"t95":[3306,3300,3298,3366,3301],"visIndex":[0.7943,0.7752,0.7754,0.8046,0.7755]},"median":{"t85":3301,"t95":3301,"visIndex":0.7755},"p10":{"t85":3298.8,"t95":3298.8,"visIndex":0.77528},"p90":{"t85":3342,"t95":3342,"visIndex":0.8004800000000001},"errors":[]},{"browser":"chromium","browser_version":"141.0.7390.37","id":"avif","label":"AVIF","format":"avif","notes":"","dist":{"count":5,"t85":[2116,2127,2110,2143,2112],"t95":[2116,2127,2110,2143,2112],"visIndex":[0.7219,0.7168,0.719,0.7448,0.7147]},"median":{"t85":2116,"t95":2116,"visIndex":0.719},"p10":{"t85":2110.8,"t95":2110.8,"visIndex":0.7155400000000001},"p90":{"t85":2136.6,"t95":2136.6,"visIndex":0.73564},"errors":[]},{"browser":"chromium","browser_version":"141.0.7390.37","id":"avif-progressive","label":"AVIF (progressive)","format":"avif","notes":"single-input progressive","dist":{"count":5,"t85":[1328,1297,1298,1298,1298],"t95":[1328,1297,1298,1298,1298],"visIndex":[0.2562,0.2544,0.2525,0.2511,0.2529]},"median":{"t85":1298,"t95":1298,"visIndex":0.2529},"p10":{"t85":1297.4,"t95":1297.4,"visIndex":0.25166},"p90":{"t85":1316,"t95":1316,"visIndex":0.25548000000000004},"errors":[]},{"browser":"chromium","browser_version":"141.0.7390.37","id":"jxl","label":"JPEG XL","format":"jxl","notes":"","dist":{"count":5,"t85":[331,355,354,355,355],"t95":[331,355,354,355,355],"visIndex":[0.021,0.0227,0.0228,0.0225,0.0224]},"median":{"t85":355,"t95":355,"visIndex":0.0225},"p10":{"t85":340.2,"t95":340.2,"visIndex":0.021560000000000003},"p90":{"t85":355,"t95":355,"visIndex":0.022760000000000002},"errors":[]},{"browser":"chromium","browser_version":"141.0.7390.37","id":"jxl-progressive","label":"JPEG XL (progressive)","format":"jxl","notes":"","dist":{"count":5,"t85":[372,356,356,359,358],"t95":[372,356,356,359,358],"visIndex":[0.024,0.0223,0.0226,0.0225,0.0226]},"median":{"t85":358,"t95":358,"visIndex":0.0226},"p10":{"t85":356,"t95":356,"visIndex":0.022379999999999997},"p90":{"t85":366.8,"t95":366.8,"visIndex":0.023440000000000003},"errors":[]},{"browser":"chromium","browser_version":"141.0.7390.37","id":"png-interlaced","label":"PNG (Adam7)","format":"png","notes":"","dist":{"count":5,"t85":[91,88,85,91,86],"t95":[91,88,85,91,86],"visIndex":[0,0,0,0,0]},"median":{"t85":88,"t95":88,"visIndex":0},"p10":{"t85":85.4,"t95":85.4,"visIndex":0},"p90":{"t85":91,"t95":91,"visIndex":0},"errors":[]},{"browser":"firefox","browser_version":"142.0.1","id":"jpeg-baseline","label":"JPEG Baseline","format":"jpeg","notes":"","dist":{"count":5,"t85":[777,147,109,109,107],"t95":[777,147,109,109,107],"visIndex":[0.4108,0,0,0,0]},"median":{"t85":109,"t95":109,"visIndex":0},"p10":{"t85":107.80000000000001,"t95":107.80000000000001,"visIndex":0},"p90":{"t85":525,"t95":525,"visIndex":0.24648000000000003},"errors":[]},{"browser":"firefox","browser_version":"142.0.1","id":"jpeg-progressive","label":"JPEG Progressive","format":"jpeg","notes":"","dist":{"count":5,"t85":[165,128,118,110,109],"t95":[165,128,118,110,109],"visIndex":[0.0946,0,0,0,0]},"median":{"t85":118,"t95":118,"visIndex":0},"p10":{"t85":109.39999999999999,"t95":109.39999999999999,"visIndex":0},"p90":{"t85":150.2,"t95":150.2,"visIndex":0.05676000000000001},"errors":[]},{"browser":"firefox","browser_version":"142.0.1","id":"webp","label":"WebP","format":"webp","notes":"","dist":{"count":5,"t85":[852,128,110,110,111],"t95":[852,128,110,110,111],"visIndex":[0.5003,0,0,0,0]},"median":{"t85":111,"t95":111,"visIndex":0},"p10":{"t85":110,"t95":110,"visIndex":0},"p90":{"t85":562.4000000000001,"t95":562.4000000000001,"visIndex":0.30018},"errors":[]},{"browser":"firefox","browser_version":"142.0.1","id":"avif","label":"AVIF","format":"avif","notes":"","dist":{"count":5,"t85":[751,133,109,109,108],"t95":[751,133,109,109,108],"visIndex":[0.4619,0,0,0,0]},"median":{"t85":109,"t95":109,"visIndex":0},"p10":{"t85":108.4,"t95":108.4,"visIndex":0},"p90":{"t85":503.80000000000007,"t95":503.80000000000007,"visIndex":0.27714000000000005},"errors":[]},{"browser":"firefox","browser_version":"142.0.1","id":"avif-progressive","label":"AVIF (progressive)","format":"avif","notes":"single-input progressive","dist":{"count":5,"t85":[1649,132,112,110,111],"t95":[1649,132,112,110,111],"visIndex":[0.6667,0,0,0,0]},"median":{"t85":112,"t95":112,"visIndex":0},"p10":{"t85":110.4,"t95":110.4,"visIndex":0},"p90":{"t85":1042.2,"t95":1042.2,"visIndex":0.40002000000000004},"errors":[]},{"browser":"firefox","browser_version":"142.0.1","id":"jxl","label":"JPEG XL","format":"jxl","notes":"","dist":{"count":5,"t85":[60,64,63,66,67],"t95":[60,64,63,66,67],"visIndex":[0,0,0,0,0]},"median":{"t85":64,"t95":64,"visIndex":0},"p10":{"t85":61.2,"t95":61.2,"visIndex":0},"p90":{"t85":66.6,"t95":66.6,"visIndex":0},"errors":[]},{"browser":"firefox","browser_version":"142.0.1","id":"jxl-progressive","label":"JPEG XL (progressive)","format":"jxl","notes":"","dist":{"count":5,"t85":[64,77,77,77,76],"t95":[64,77,77,77,76],"visIndex":[0,0,0,0,0]},"median":{"t85":77,"t95":77,"visIndex":0},"p10":{"t85":68.8,"t95":68.8,"visIndex":0},"p90":{"t85":77,"t95":77,"visIndex":0},"errors":[]},{"browser":"firefox","browser_version":"142.0.1","id":"png-interlaced","label":"PNG (Adam7)","format":"png","notes":"","dist":{"count":5,"t85":[6120,142,111,108,111],"t95":[6120,142,111,108,111],"visIndex":[0.51,0,0,0,0]},"median":{"t85":111,"t95":111,"visIndex":0},"p10":{"t85":109.2,"t95":109.2,"visIndex":0},"p90":{"t85":3728.8000000000006,"t95":3728.8000000000006,"visIndex":0.30600000000000005},"errors":[]},{"browser":"webkit","browser_version":"26.0","id":"jpeg-baseline","label":"JPEG Baseline","format":"jpeg","notes":"","dist":{"count":5,"t85":[1298,112,84,85,85],"t95":[1298,112,84,85,85],"visIndex":[0.6228,0,0,0,0]},"median":{"t85":85,"t95":85,"visIndex":0},"p10":{"t85":84.4,"t95":84.4,"visIndex":0},"p90":{"t85":823.6,"t95":823.6,"visIndex":0.37368000000000007},"errors":[]},{"browser":"webkit","browser_version":"26.0","id":"jpeg-progressive","label":"JPEG Progressive","format":"jpeg","notes":"","dist":{"count":5,"t85":[624,114,86,83,84],"t95":[624,114,86,83,84],"visIndex":[0.4335,0,0,0,0]},"median":{"t85":86,"t95":86,"visIndex":0},"p10":{"t85":83.4,"t95":83.4,"visIndex":0},"p90":{"t85":420,"t95":420,"visIndex":0.26010000000000005},"errors":[]},{"browser":"webkit","browser_version":"26.0","id":"webp","label":"WebP","format":"webp","notes":"","dist":{"count":5,"t85":[1393,118,84,86,86],"t95":[1393,118,84,86,86],"visIndex":[0.6361,0,0,0,0]},"median":{"t85":86,"t95":86,"visIndex":0},"p10":{"t85":84.8,"t95":84.8,"visIndex":0},"p90":{"t85":883,"t95":883,"visIndex":0.38166000000000005},"errors":[]},{"browser":"webkit","browser_version":"26.0","id":"avif","label":"AVIF","format":"avif","notes":"","dist":{"count":5,"t85":[715,116,85,87,86],"t95":[715,116,85,87,86],"visIndex":[0.4622,0,0,0,0]},"median":{"t85":87,"t95":87,"visIndex":0},"p10":{"t85":85.4,"t95":85.4,"visIndex":0},"p90":{"t85":475.40000000000003,"t95":475.40000000000003,"visIndex":0.27732000000000007},"errors":[]},{"browser":"webkit","browser_version":"26.0","id":"avif-progressive","label":"AVIF (progressive)","format":"avif","notes":"single-input progressive","dist":{"count":5,"t85":[59,90,93,86,83],"t95":[59,90,93,86,83],"visIndex":[0,0,0,0,0]},"median":{"t85":86,"t95":86,"visIndex":0},"p10":{"t85":68.6,"t95":68.6,"visIndex":0},"p90":{"t85":91.80000000000001,"t95":91.80000000000001,"visIndex":0},"errors":[]},{"browser":"webkit","browser_version":"26.0","id":"jxl","label":"JPEG XL","format":"jxl","notes":"","dist":{"count":5,"t85":[770,112,85,86,85],"t95":[770,112,85,86,85],"visIndex":[0.4843,0,0,0,0]},"median":{"t85":86,"t95":86,"visIndex":0},"p10":{"t85":85,"t95":85,"visIndex":0},"p90":{"t85":506.80000000000007,"t95":506.80000000000007,"visIndex":0.29058000000000006},"errors":[]},{"browser":"webkit","browser_version":"26.0","id":"jxl-progressive","label":"JPEG XL (progressive)","format":"jxl","notes":"","dist":{"count":5,"t85":[774,112,85,84,84],"t95":[774,112,85,84,84],"visIndex":[0.4838,0,0,0,0]},"median":{"t85":85,"t95":85,"visIndex":0},"p10":{"t85":84,"t95":84,"visIndex":0},"p90":{"t85":509.2000000000001,"t95":509.2000000000001,"visIndex":0.29028000000000004},"errors":[]},{"browser":"webkit","browser_version":"26.0","id":"png-interlaced","label":"PNG (Adam7)","format":"png","notes":"","dist":{"count":5,"t85":[11034,148,86,86,86],"t95":[11034,148,86,86,86],"visIndex":[0.9249,0,0,0,0]},"median":{"t85":86,"t95":86,"visIndex":0},"p10":{"t85":86,"t95":86,"visIndex":0},"p90":{"t85":6679.6,"t95":6679.6,"visIndex":0.5549400000000001},"errors":[]}];
+const meta = {"system":{"os_type":"Darwin","os_platform":"darwin","os_release":"24.1.0","os_arch":"arm64","cpu_model":"Apple M2 Pro","cpu_cores":12,"memory_gb":17},"node":"v20.19.4","versions":{"chromium":"141.0.7390.37","firefox":"142.0.1","webkit":"26.0"}};
+
+// Stable test order (format then id) for consistent bars vs v2
+const testOrder = [...new Set(aggregated.map(r => r.format + "::" + r.id))]
+  .sort((a,b) => a.localeCompare(b))
+  .map(s => s.split("::")[1]);
+
+function renderMeta() {
+  const m = document.getElementById('meta');
+  const sys = meta.system;
+  const vers = meta.versions;
+  const osLine = sys.os_type + " " + sys.os_release + " (" + sys.os_platform + ", " + sys.os_arch + ")";
+  const hwLine = sys.cpu_model + " ×" + sys.cpu_cores + " • " + sys.memory_gb + " GB RAM";
+  const nodeLine = "Node " + meta.node;
+  const browsers = Object.entries(vers).map(([k,v]) => k + ": " + v).join(" • ");
+  m.innerHTML = '<div class="kv">'
+    + '<div><b>OS</b>: ' + osLine + '</div>'
+    + '<div><b>HW</b>: ' + hwLine + '</div>'
+    + '<div><b>Node</b>: ' + nodeLine + '</div>'
+    + '<div><b>Browsers</b>: ' + browsers + '</div>'
+    + '</div>';
+}
+
+function boxPlot(metric, elId, title) {
+  const browsers = [...new Set(aggregated.map(r => r.browser))];
+  const traces = [];
+  for (const b of browsers) {
+    const rows = aggregated.filter(r => r.browser === b);
+    const x = [], y = [];
+    rows.forEach(r => {
+      const arr = (r.dist && r.dist[metric]) ? r.dist[metric] : [];
+      arr.forEach(v => {
+        const num = Number(v);
+        if (!Number.isNaN(num)) { x.push(r.id); y.push(num); }
+      });
+    });
+    traces.push({
+      x, y, name: b, type: 'box', boxpoints:'outliers',
+      hovertemplate: 'Browser: ' + b + '<br>Test: %{x}<br>' + metric + ': %{y}<extra></extra>'
+    });
+  }
+  const layout = {
+    title, xaxis: { title: 'Test ID', categoryarray: testOrder, categoryorder: 'array' },
+    yaxis: { title: metric, rangemode:'tozero' },
+    margin: { t: 40, r: 10, b: 60, l: 50 }
+  };
+  Plotly.newPlot(elId, traces, layout, {displaylogo:false, responsive:true, useResizeHandler:true});
+}
+
+function barsMedian(elId, title) {
+  const browsers = [...new Set(aggregated.map(r => r.browser))];
+  const ids = testOrder;
+  const traces = browsers.map(b => {
+    const rows = aggregated.filter(r => r.browser === b);
+    const y = ids.map(id => {
+      const row = rows.find(r => r.id === id);
+      const v = row?.median?.visIndex;
+      return (v==null || Number.isNaN(Number(v))) ? null : Number(v);
+    });
+    return { x: ids, y, name: b, type:'bar', hovertemplate: 'Browser: ' + b + '<br>Test: %{x}<br>Median VI: %{y:.3f}<extra></extra>' };
+  });
+  const layout = {
+    title,
+    barmode:'group',
+    xaxis:{ title:'Test', categoryarray: ids, categoryorder:'array' },
+    yaxis:{ title:'Median Visual Index', rangemode:'tozero', tickformat:'.3f' },
+    margin:{ t:40, r:10, b:60, l:50 }
+  };
+  Plotly.newPlot(elId, traces, layout, {displaylogo:false, responsive:true, useResizeHandler:true});
+}
+
+function drawTable() {
+  const headers = ["browser","browser_version","id","label","format",
+                   "median_t85","p10_t85","p90_t85",
+                   "median_t95","p10_t95","p90_t95",
+                   "median_visIndex","p10_visIndex","p90_visIndex",
+                   "notes","n_runs","errors"];
+  const tbl = document.getElementById('summary');
+  const thead = document.createElement('thead'); const trh = document.createElement('tr');
+  headers.forEach(h => { const th = document.createElement('th'); th.textContent = h; trh.appendChild(th); });
+  thead.appendChild(trh);
+  const tbody = document.createElement('tbody');
+
+  // Stable ordering by browser then testOrder
+  const byBrowser = {};
+  aggregated.forEach(r => { (byBrowser[r.browser] ||= []).push(r); });
+  Object.keys(byBrowser).sort().forEach(b => {
+    const rows = byBrowser[b].slice().sort((a,b) => testOrder.indexOf(a.id) - testOrder.indexOf(b.id));
+    rows.forEach(r => {
+      const tr = document.createElement('tr');
+      const row = [
+        r.browser, r.browser_version, r.id, r.label, r.format,
+        round(r.median.t85), round(r.p10.t85), round(r.p90.t85),
+        round(r.median.t95), round(r.p10.t95), round(r.p90.t95),
+        fmt3(r.median.visIndex), fmt3(r.p10.visIndex), fmt3(r.p90.visIndex),
+        r.notes || "", r.dist.count, (r.errors||[]).join(" | ")
+      ];
+      row.forEach(v => { const td = document.createElement('td'); td.textContent = v ?? ""; tr.appendChild(td); });
+      tbody.appendChild(tr);
+    });
+  });
+
+  tbl.appendChild(thead); tbl.appendChild(tbody);
+
+  function round(v){ return (v==null||isNaN(v)) ? "" : Math.round(v); }
+  function fmt3(v){ return (v==null||isNaN(v)) ? "" : (+v).toFixed(3); }
+}
+
+function attachResize() {
+  const ids = ['box_t85','box_t95','box_vi','bars_median'];
+  window.addEventListener('resize', () => { ids.forEach(id => { const el = document.getElementById(id); if (el) Plotly.Plots.resize(el); }); });
+}
+
+renderMeta();
+boxPlot('t85', 'box_t85', 't85 distribution (lower is better)');
+boxPlot('t95', 'box_t95', 't95 distribution (lower is better)');
+boxPlot('visIndex', 'box_vi', 'Visual Index distribution (lower is better)');
+barsMedian('bars_median', 'Median Visual Index by browser/test');
+drawTable();
+attachResize();
+</script>
+</body>
+</html>

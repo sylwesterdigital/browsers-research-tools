@@ -1,0 +1,38 @@
+{
+  "browser": "webkit",
+  "browser_version": "26.0",
+  "id": "avif-progressive",
+  "label": "AVIF (progressive)",
+  "format": "avif",
+  "notes": "single-input progressive",
+  "run": 4,
+  "samples": [
+    {
+      "t": 85,
+      "completeness": 1
+    },
+    {
+      "t": 252,
+      "completeness": 1
+    },
+    {
+      "t": 420,
+      "completeness": 1
+    },
+    {
+      "t": 589,
+      "completeness": 1
+    },
+    {
+      "t": 761,
+      "completeness": 1
+    },
+    {
+      "t": 931,
+      "completeness": 1
+    }
+  ],
+  "t85": 85,
+  "t95": 85,
+  "visIndex": 0
+}

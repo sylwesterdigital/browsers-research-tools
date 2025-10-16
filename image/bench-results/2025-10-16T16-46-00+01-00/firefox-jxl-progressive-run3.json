@@ -1,0 +1,450 @@
+{
+  "browser": "firefox",
+  "browser_version": "142.0.1",
+  "id": "jxl-progressive",
+  "label": "JPEG XL (progressive)",
+  "format": "jxl",
+  "notes": "",
+  "run": 3,
+  "samples": [
+    {
+      "t": 63,
+      "completeness": 1
+    },
+    {
+      "t": 172,
+      "completeness": 1
+    },
+    {
+      "t": 282,
+      "completeness": 1
+    },
+    {
+      "t": 408,
+      "completeness": 1
+    },
+    {
+      "t": 515,
+      "completeness": 1
+    },
+    {
+      "t": 626,
+      "completeness": 1
+    },
+    {
+      "t": 737,
+      "completeness": 1
+    },
+    {
+      "t": 846,
+      "completeness": 1
+    },
+    {
+      "t": 956,
+      "completeness": 1
+    },
+    {
+      "t": 1066,
+      "completeness": 1
+    },
+    {
+      "t": 1175,
+      "completeness": 1
+    },
+    {
+      "t": 1286,
+      "completeness": 1
+    },
+    {
+      "t": 1397,
+      "completeness": 1
+    },
+    {
+      "t": 1507,
+      "completeness": 1
+    },
+    {
+      "t": 1618,
+      "completeness": 1
+    },
+    {
+      "t": 1727,
+      "completeness": 1
+    },
+    {
+      "t": 1837,
+      "completeness": 1
+    },
+    {
+      "t": 1947,
+      "completeness": 1
+    },
+    {
+      "t": 2057,
+      "completeness": 1
+    },
+    {
+      "t": 2166,
+      "completeness": 1
+    },
+    {
+      "t": 2275,
+      "completeness": 1
+    },
+    {
+      "t": 2384,
+      "completeness": 1
+    },
+    {
+      "t": 2494,
+      "completeness": 1
+    },
+    {
+      "t": 2605,
+      "completeness": 1
+    },
+    {
+      "t": 2715,
+      "completeness": 1
+    },
+    {
+      "t": 2824,
+      "completeness": 1
+    },
+    {
+      "t": 2933,
+      "completeness": 1
+    },
+    {
+      "t": 3043,
+      "completeness": 1
+    },
+    {
+      "t": 3153,
+      "completeness": 1
+    },
+    {
+      "t": 3264,
+      "completeness": 1
+    },
+    {
+      "t": 3373,
+      "completeness": 1
+    },
+    {
+      "t": 3483,
+      "completeness": 1
+    },
+    {
+      "t": 3593,
+      "completeness": 1
+    },
+    {
+      "t": 3703,
+      "completeness": 1
+    },
+    {
+      "t": 3813,
+      "completeness": 1
+    },
+    {
+      "t": 3923,
+      "completeness": 1
+    },
+    {
+      "t": 4033,
+      "completeness": 1
+    },
+    {
+      "t": 4144,
+      "completeness": 1
+    },
+    {
+      "t": 4255,
+      "completeness": 1
+    },
+    {
+      "t": 4365,
+      "completeness": 1
+    },
+    {
+      "t": 4476,
+      "completeness": 1
+    },
+    {
+      "t": 4586,
+      "completeness": 1
+    },
+    {
+      "t": 4696,
+      "completeness": 1
+    },
+    {
+      "t": 4805,
+      "completeness": 1
+    },
+    {
+      "t": 4916,
+      "completeness": 1
+    },
+    {
+      "t": 5025,
+      "completeness": 1
+    },
+    {
+      "t": 5134,
+      "completeness": 1
+    },
+    {
+      "t": 5243,
+      "completeness": 1
+    },
+    {
+      "t": 5354,
+      "completeness": 1
+    },
+    {
+      "t": 5464,
+      "completeness": 1
+    },
+    {
+      "t": 5570,
+      "completeness": 1
+    },
+    {
+      "t": 5675,
+      "completeness": 1
+    },
+    {
+      "t": 5780,
+      "completeness": 1
+    },
+    {
+      "t": 5885,
+      "completeness": 1
+    },
+    {
+      "t": 5996,
+      "completeness": 1
+    },
+    {
+      "t": 6105,
+      "completeness": 1
+    },
+    {
+      "t": 6215,
+      "completeness": 1
+    },
+    {
+      "t": 6325,
+      "completeness": 1
+    },
+    {
+      "t": 6434,
+      "completeness": 1
+    },
+    {
+      "t": 6545,
+      "completeness": 1
+    },
+    {
+      "t": 6655,
+      "completeness": 1
+    },
+    {
+      "t": 6765,
+      "completeness": 1
+    },
+    {
+      "t": 6875,
+      "completeness": 1
+    },
+    {
+      "t": 6985,
+      "completeness": 1
+    },
+    {
+      "t": 7095,
+      "completeness": 1
+    },
+    {
+      "t": 7205,
+      "completeness": 1
+    },
+    {
+      "t": 7314,
+      "completeness": 1
+    },
+    {
+      "t": 7423,
+      "completeness": 1
+    },
+    {
+      "t": 7533,
+      "completeness": 1
+    },
+    {
+      "t": 7644,
+      "completeness": 1
+    },
+    {
+      "t": 7754,
+      "completeness": 1
+    },
+    {
+      "t": 7864,
+      "completeness": 1
+    },
+    {
+      "t": 7972,
+      "completeness": 1
+    },
+    {
+      "t": 8082,
+      "completeness": 1
+    },
+    {
+      "t": 8191,
+      "completeness": 1
+    },
+    {
+      "t": 8301,
+      "completeness": 1
+    },
+    {
+      "t": 8410,
+      "completeness": 1
+    },
+    {
+      "t": 8520,
+      "completeness": 1
+    },
+    {
+      "t": 8629,
+      "completeness": 1
+    },
+    {
+      "t": 8737,
+      "completeness": 1
+    },
+    {
+      "t": 8846,
+      "completeness": 1
+    },
+    {
+      "t": 8957,
+      "completeness": 1
+    },
+    {
+      "t": 9067,
+      "completeness": 1
+    },
+    {
+      "t": 9176,
+      "completeness": 1
+    },
+    {
+      "t": 9286,
+      "completeness": 1
+    },
+    {
+      "t": 9397,
+      "completeness": 1
+    },
+    {
+      "t": 9506,
+      "completeness": 1
+    },
+    {
+      "t": 9617,
+      "completeness": 1
+    },
+    {
+      "t": 9727,
+      "completeness": 1
+    },
+    {
+      "t": 9835,
+      "completeness": 1
+    },
+    {
+      "t": 9945,
+      "completeness": 1
+    },
+    {
+      "t": 10056,
+      "completeness": 1
+    },
+    {
+      "t": 10167,
+      "completeness": 1
+    },
+    {
+      "t": 10276,
+      "completeness": 1
+    },
+    {
+      "t": 10386,
+      "completeness": 1
+    },
+    {
+      "t": 10496,
+      "completeness": 1
+    },
+    {
+      "t": 10604,
+      "completeness": 1
+    },
+    {
+      "t": 10715,
+      "completeness": 1
+    },
+    {
+      "t": 10825,
+      "completeness": 1
+    },
+    {
+      "t": 10936,
+      "completeness": 1
+    },
+    {
+      "t": 11046,
+      "completeness": 1
+    },
+    {
+      "t": 11157,
+      "completeness": 1
+    },
+    {
+      "t": 11267,
+      "completeness": 1
+    },
+    {
+      "t": 11377,
+      "completeness": 1
+    },
+    {
+      "t": 11486,
+      "completeness": 1
+    },
+    {
+      "t": 11596,
+      "completeness": 1
+    },
+    {
+      "t": 11704,
+      "completeness": 1
+    },
+    {
+      "t": 11815,
+      "completeness": 1
+    },
+    {
+      "t": 11924,
+      "completeness": 1
+    }
+  ],
+  "t85": 63,
+  "t95": 63,
+  "visIndex": 0
+}

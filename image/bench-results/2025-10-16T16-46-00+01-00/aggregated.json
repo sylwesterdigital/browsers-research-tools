@@ -1,0 +1,1154 @@
+[
+  {
+    "browser": "chromium",
+    "browser_version": "141.0.7390.37",
+    "id": "jpeg-baseline",
+    "label": "JPEG Baseline",
+    "format": "jpeg",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        2359,
+        2278,
+        2312,
+        2274,
+        2394
+      ],
+      "t95": [
+        2359,
+        2278,
+        2312,
+        2274,
+        2394
+      ],
+      "visIndex": [
+        0.6028,
+        0.5845,
+        0.6026,
+        0.5938,
+        0.6106
+      ]
+    },
+    "median": {
+      "t85": 2312,
+      "t95": 2312,
+      "visIndex": 0.6026
+    },
+    "p10": {
+      "t85": 2275.6,
+      "t95": 2275.6,
+      "visIndex": 0.58822
+    },
+    "p90": {
+      "t85": 2380,
+      "t95": 2380,
+      "visIndex": 0.60748
+    },
+    "errors": []
+  },
+  {
+    "browser": "chromium",
+    "browser_version": "141.0.7390.37",
+    "id": "jpeg-progressive",
+    "label": "JPEG Progressive",
+    "format": "jpeg",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        1326,
+        1296,
+        1299,
+        1301,
+        1304
+      ],
+      "t95": [
+        1326,
+        1296,
+        1299,
+        1301,
+        1304
+      ],
+      "visIndex": [
+        0.3492,
+        0.3429,
+        0.3447,
+        0.3465,
+        0.3444
+      ]
+    },
+    "median": {
+      "t85": 1301,
+      "t95": 1301,
+      "visIndex": 0.3447
+    },
+    "p10": {
+      "t85": 1297.2,
+      "t95": 1297.2,
+      "visIndex": 0.34349999999999997
+    },
+    "p90": {
+      "t85": 1317.2,
+      "t95": 1317.2,
+      "visIndex": 0.34812
+    },
+    "errors": []
+  },
+  {
+    "browser": "chromium",
+    "browser_version": "141.0.7390.37",
+    "id": "webp",
+    "label": "WebP",
+    "format": "webp",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        3366,
+        3298,
+        3334,
+        3309,
+        3299
+      ],
+      "t95": [
+        3366,
+        3298,
+        3334,
+        3309,
+        3299
+      ],
+      "visIndex": [
+        0.7852,
+        0.7752,
+        0.7985,
+        0.7763,
+        0.7754
+      ]
+    },
+    "median": {
+      "t85": 3309,
+      "t95": 3309,
+      "visIndex": 0.7763
+    },
+    "p10": {
+      "t85": 3298.4,
+      "t95": 3298.4,
+      "visIndex": 0.77528
+    },
+    "p90": {
+      "t85": 3353.2,
+      "t95": 3353.2,
+      "visIndex": 0.79318
+    },
+    "errors": []
+  },
+  {
+    "browser": "chromium",
+    "browser_version": "141.0.7390.37",
+    "id": "avif",
+    "label": "AVIF",
+    "format": "avif",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        2115,
+        2113,
+        2126,
+        2143,
+        2131
+      ],
+      "t95": [
+        2115,
+        2113,
+        2126,
+        2143,
+        2131
+      ],
+      "visIndex": [
+        0.7433,
+        0.7148,
+        0.7163,
+        0.7184,
+        0.7175
+      ]
+    },
+    "median": {
+      "t85": 2126,
+      "t95": 2126,
+      "visIndex": 0.7175
+    },
+    "p10": {
+      "t85": 2113.8,
+      "t95": 2113.8,
+      "visIndex": 0.7154
+    },
+    "p90": {
+      "t85": 2138.2,
+      "t95": 2138.2,
+      "visIndex": 0.73334
+    },
+    "errors": []
+  },
+  {
+    "browser": "chromium",
+    "browser_version": "141.0.7390.37",
+    "id": "avif-progressive",
+    "label": "AVIF (progressive)",
+    "format": "avif",
+    "notes": "single-input progressive",
+    "dist": {
+      "count": 5,
+      "t85": [
+        1310,
+        1329,
+        1296,
+        1297,
+        1298
+      ],
+      "t95": [
+        1310,
+        1329,
+        1296,
+        1297,
+        1298
+      ],
+      "visIndex": [
+        0.2515,
+        0.2604,
+        0.2521,
+        0.2526,
+        0.2526
+      ]
+    },
+    "median": {
+      "t85": 1298,
+      "t95": 1298,
+      "visIndex": 0.2526
+    },
+    "p10": {
+      "t85": 1296.4,
+      "t95": 1296.4,
+      "visIndex": 0.25174
+    },
+    "p90": {
+      "t85": 1321.4,
+      "t95": 1321.4,
+      "visIndex": 0.25728
+    },
+    "errors": []
+  },
+  {
+    "browser": "chromium",
+    "browser_version": "141.0.7390.37",
+    "id": "jxl",
+    "label": "JPEG XL",
+    "format": "jxl",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        348,
+        357,
+        355,
+        353,
+        353
+      ],
+      "t95": [
+        348,
+        357,
+        355,
+        353,
+        353
+      ],
+      "visIndex": [
+        0.0227,
+        0.0226,
+        0.0225,
+        0.0226,
+        0.0225
+      ]
+    },
+    "median": {
+      "t85": 353,
+      "t95": 353,
+      "visIndex": 0.0226
+    },
+    "p10": {
+      "t85": 350,
+      "t95": 350,
+      "visIndex": 0.0225
+    },
+    "p90": {
+      "t85": 356.20000000000005,
+      "t95": 356.20000000000005,
+      "visIndex": 0.02266
+    },
+    "errors": []
+  },
+  {
+    "browser": "chromium",
+    "browser_version": "141.0.7390.37",
+    "id": "jxl-progressive",
+    "label": "JPEG XL (progressive)",
+    "format": "jxl",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        355,
+        356,
+        356,
+        378,
+        356
+      ],
+      "t95": [
+        355,
+        356,
+        356,
+        378,
+        356
+      ],
+      "visIndex": [
+        0.0228,
+        0.0224,
+        0.0226,
+        0.0241,
+        0.0224
+      ]
+    },
+    "median": {
+      "t85": 356,
+      "t95": 356,
+      "visIndex": 0.0226
+    },
+    "p10": {
+      "t85": 355.4,
+      "t95": 355.4,
+      "visIndex": 0.0224
+    },
+    "p90": {
+      "t85": 369.20000000000005,
+      "t95": 369.20000000000005,
+      "visIndex": 0.02358
+    },
+    "errors": []
+  },
+  {
+    "browser": "chromium",
+    "browser_version": "141.0.7390.37",
+    "id": "png-interlaced",
+    "label": "PNG (Adam7)",
+    "format": "png",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        90,
+        93,
+        92,
+        94,
+        90
+      ],
+      "t95": [
+        90,
+        93,
+        92,
+        94,
+        90
+      ],
+      "visIndex": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 92,
+      "t95": 92,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 90,
+      "t95": 90,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 93.6,
+      "t95": 93.6,
+      "visIndex": 0
+    },
+    "errors": []
+  },
+  {
+    "browser": "firefox",
+    "browser_version": "142.0.1",
+    "id": "jpeg-baseline",
+    "label": "JPEG Baseline",
+    "format": "jpeg",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        764,
+        133,
+        105,
+        106,
+        105
+      ],
+      "t95": [
+        764,
+        133,
+        105,
+        106,
+        105
+      ],
+      "visIndex": [
+        0.4105,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 106,
+      "t95": 106,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 105,
+      "t95": 105,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 511.6000000000001,
+      "t95": 511.6000000000001,
+      "visIndex": 0.24630000000000002
+    },
+    "errors": []
+  },
+  {
+    "browser": "firefox",
+    "browser_version": "142.0.1",
+    "id": "jpeg-progressive",
+    "label": "JPEG Progressive",
+    "format": "jpeg",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        165,
+        109,
+        108,
+        105,
+        106
+      ],
+      "t95": [
+        165,
+        109,
+        108,
+        105,
+        106
+      ],
+      "visIndex": [
+        0.0878,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 108,
+      "t95": 108,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 105.4,
+      "t95": 105.4,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 142.6,
+      "t95": 142.6,
+      "visIndex": 0.05268000000000001
+    },
+    "errors": []
+  },
+  {
+    "browser": "firefox",
+    "browser_version": "142.0.1",
+    "id": "webp",
+    "label": "WebP",
+    "format": "webp",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        835,
+        112,
+        107,
+        112,
+        109
+      ],
+      "t95": [
+        835,
+        112,
+        107,
+        112,
+        109
+      ],
+      "visIndex": [
+        0.4981,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 112,
+      "t95": 112,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 107.80000000000001,
+      "t95": 107.80000000000001,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 545.8000000000001,
+      "t95": 545.8000000000001,
+      "visIndex": 0.29886
+    },
+    "errors": []
+  },
+  {
+    "browser": "firefox",
+    "browser_version": "142.0.1",
+    "id": "avif",
+    "label": "AVIF",
+    "format": "avif",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        728,
+        108,
+        107,
+        106,
+        106
+      ],
+      "t95": [
+        728,
+        108,
+        107,
+        106,
+        106
+      ],
+      "visIndex": [
+        0.462,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 107,
+      "t95": 107,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 106,
+      "t95": 106,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 480.00000000000006,
+      "t95": 480.00000000000006,
+      "visIndex": 0.27720000000000006
+    },
+    "errors": []
+  },
+  {
+    "browser": "firefox",
+    "browser_version": "142.0.1",
+    "id": "avif-progressive",
+    "label": "AVIF (progressive)",
+    "format": "avif",
+    "notes": "single-input progressive",
+    "dist": {
+      "count": 5,
+      "t85": [
+        1627,
+        111,
+        108,
+        107,
+        107
+      ],
+      "t95": [
+        1627,
+        111,
+        108,
+        107,
+        107
+      ],
+      "visIndex": [
+        0.6709,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 108,
+      "t95": 108,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 107,
+      "t95": 107,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 1020.6000000000001,
+      "t95": 1020.6000000000001,
+      "visIndex": 0.40254000000000006
+    },
+    "errors": []
+  },
+  {
+    "browser": "firefox",
+    "browser_version": "142.0.1",
+    "id": "jxl",
+    "label": "JPEG XL",
+    "format": "jxl",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        62,
+        62,
+        62,
+        63,
+        65
+      ],
+      "t95": [
+        62,
+        62,
+        62,
+        63,
+        65
+      ],
+      "visIndex": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 62,
+      "t95": 62,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 62,
+      "t95": 62,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 64.2,
+      "t95": 64.2,
+      "visIndex": 0
+    },
+    "errors": []
+  },
+  {
+    "browser": "firefox",
+    "browser_version": "142.0.1",
+    "id": "jxl-progressive",
+    "label": "JPEG XL (progressive)",
+    "format": "jxl",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        60,
+        63,
+        63,
+        66,
+        64
+      ],
+      "t95": [
+        60,
+        63,
+        63,
+        66,
+        64
+      ],
+      "visIndex": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 63,
+      "t95": 63,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 61.2,
+      "t95": 61.2,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 65.2,
+      "t95": 65.2,
+      "visIndex": 0
+    },
+    "errors": []
+  },
+  {
+    "browser": "firefox",
+    "browser_version": "142.0.1",
+    "id": "png-interlaced",
+    "label": "PNG (Adam7)",
+    "format": "png",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        6150,
+        111,
+        108,
+        106,
+        109
+      ],
+      "t95": [
+        6150,
+        111,
+        108,
+        106,
+        109
+      ],
+      "visIndex": [
+        0.5098,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 109,
+      "t95": 109,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 106.8,
+      "t95": 106.8,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 3734.4000000000005,
+      "t95": 3734.4000000000005,
+      "visIndex": 0.30588000000000004
+    },
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "browser_version": "26.0",
+    "id": "jpeg-baseline",
+    "label": "JPEG Baseline",
+    "format": "jpeg",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        1275,
+        95,
+        84,
+        85,
+        85
+      ],
+      "t95": [
+        1275,
+        95,
+        84,
+        85,
+        85
+      ],
+      "visIndex": [
+        0.6178,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 85,
+      "t95": 85,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 84.4,
+      "t95": 84.4,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 803.0000000000001,
+      "t95": 803.0000000000001,
+      "visIndex": 0.37068000000000006
+    },
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "browser_version": "26.0",
+    "id": "jpeg-progressive",
+    "label": "JPEG Progressive",
+    "format": "jpeg",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        611,
+        114,
+        82,
+        83,
+        85
+      ],
+      "t95": [
+        611,
+        114,
+        82,
+        83,
+        85
+      ],
+      "visIndex": [
+        0.4299,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 85,
+      "t95": 85,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 82.4,
+      "t95": 82.4,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 412.20000000000005,
+      "t95": 412.20000000000005,
+      "visIndex": 0.25794000000000006
+    },
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "browser_version": "26.0",
+    "id": "webp",
+    "label": "WebP",
+    "format": "webp",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        1395,
+        118,
+        85,
+        86,
+        86
+      ],
+      "t95": [
+        1395,
+        118,
+        85,
+        86,
+        86
+      ],
+      "visIndex": [
+        0.6385,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 86,
+      "t95": 86,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 85.4,
+      "t95": 85.4,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 884.2,
+      "t95": 884.2,
+      "visIndex": 0.38310000000000005
+    },
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "browser_version": "26.0",
+    "id": "avif",
+    "label": "AVIF",
+    "format": "avif",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        704,
+        117,
+        85,
+        83,
+        84
+      ],
+      "t95": [
+        704,
+        117,
+        85,
+        83,
+        84
+      ],
+      "visIndex": [
+        0.4624,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 85,
+      "t95": 85,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 83.4,
+      "t95": 83.4,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 469.2000000000001,
+      "t95": 469.2000000000001,
+      "visIndex": 0.27744
+    },
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "browser_version": "26.0",
+    "id": "avif-progressive",
+    "label": "AVIF (progressive)",
+    "format": "avif",
+    "notes": "single-input progressive",
+    "dist": {
+      "count": 5,
+      "t85": [
+        61,
+        91,
+        86,
+        85,
+        86
+      ],
+      "t95": [
+        61,
+        91,
+        86,
+        85,
+        86
+      ],
+      "visIndex": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 86,
+      "t95": 86,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 70.6,
+      "t95": 70.6,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 89,
+      "t95": 89,
+      "visIndex": 0
+    },
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "browser_version": "26.0",
+    "id": "jxl",
+    "label": "JPEG XL",
+    "format": "jxl",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        764,
+        113,
+        84,
+        86,
+        84
+      ],
+      "t95": [
+        764,
+        113,
+        84,
+        86,
+        84
+      ],
+      "visIndex": [
+        0.4839,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 86,
+      "t95": 86,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 84,
+      "t95": 84,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 503.6000000000001,
+      "t95": 503.6000000000001,
+      "visIndex": 0.29034000000000004
+    },
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "browser_version": "26.0",
+    "id": "jxl-progressive",
+    "label": "JPEG XL (progressive)",
+    "format": "jxl",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        773,
+        111,
+        84,
+        86,
+        85
+      ],
+      "t95": [
+        773,
+        111,
+        84,
+        86,
+        85
+      ],
+      "visIndex": [
+        0.4844,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 86,
+      "t95": 86,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 84.4,
+      "t95": 84.4,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 508.20000000000005,
+      "t95": 508.20000000000005,
+      "visIndex": 0.29064000000000006
+    },
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "browser_version": "26.0",
+    "id": "png-interlaced",
+    "label": "PNG (Adam7)",
+    "format": "png",
+    "notes": "",
+    "dist": {
+      "count": 5,
+      "t85": [
+        11088,
+        113,
+        85,
+        88,
+        88
+      ],
+      "t95": [
+        11088,
+        113,
+        85,
+        88,
+        88
+      ],
+      "visIndex": [
+        0.9308,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "median": {
+      "t85": 88,
+      "t95": 88,
+      "visIndex": 0
+    },
+    "p10": {
+      "t85": 86.2,
+      "t95": 86.2,
+      "visIndex": 0
+    },
+    "p90": {
+      "t85": 6698.000000000001,
+      "t95": 6698.000000000001,
+      "visIndex": 0.5584800000000001
+    },
+    "errors": []
+  }
+]

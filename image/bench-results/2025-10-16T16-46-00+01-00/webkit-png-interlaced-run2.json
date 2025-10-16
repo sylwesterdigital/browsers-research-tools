@@ -1,0 +1,38 @@
+{
+  "browser": "webkit",
+  "browser_version": "26.0",
+  "id": "png-interlaced",
+  "label": "PNG (Adam7)",
+  "format": "png",
+  "notes": "",
+  "run": 2,
+  "samples": [
+    {
+      "t": 113,
+      "completeness": 1
+    },
+    {
+      "t": 285,
+      "completeness": 1
+    },
+    {
+      "t": 459,
+      "completeness": 1
+    },
+    {
+      "t": 631,
+      "completeness": 1
+    },
+    {
+      "t": 799,
+      "completeness": 1
+    },
+    {
+      "t": 970,
+      "completeness": 1
+    }
+  ],
+  "t85": 113,
+  "t95": 113,
+  "visIndex": 0
+}

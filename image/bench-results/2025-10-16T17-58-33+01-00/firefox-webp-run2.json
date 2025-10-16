@@ -1,0 +1,34 @@
+{
+  "browser": "firefox",
+  "browser_version": "142.0.1",
+  "id": "webp",
+  "label": "WebP",
+  "format": "webp",
+  "notes": "",
+  "run": 2,
+  "samples": [
+    {
+      "t": 146,
+      "completeness": 1
+    },
+    {
+      "t": 342,
+      "completeness": 1
+    },
+    {
+      "t": 535,
+      "completeness": 1
+    },
+    {
+      "t": 731,
+      "completeness": 1
+    },
+    {
+      "t": 928,
+      "completeness": 1
+    }
+  ],
+  "t85": 146,
+  "t95": 146,
+  "visIndex": 0
+}

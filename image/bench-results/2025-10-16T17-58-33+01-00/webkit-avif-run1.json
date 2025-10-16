@@ -1,0 +1,70 @@
+{
+  "browser": "webkit",
+  "browser_version": "26.0",
+  "id": "avif",
+  "label": "AVIF",
+  "format": "avif",
+  "notes": "",
+  "run": 1,
+  "samples": [
+    {
+      "t": 57,
+      "completeness": 0
+    },
+    {
+      "t": 163,
+      "completeness": 0
+    },
+    {
+      "t": 268,
+      "completeness": 0
+    },
+    {
+      "t": 379,
+      "completeness": 0
+    },
+    {
+      "t": 488,
+      "completeness": 0
+    },
+    {
+      "t": 601,
+      "completeness": 0
+    },
+    {
+      "t": 709,
+      "completeness": 1
+    },
+    {
+      "t": 816,
+      "completeness": 1
+    },
+    {
+      "t": 923,
+      "completeness": 1
+    },
+    {
+      "t": 1032,
+      "completeness": 1
+    },
+    {
+      "t": 1144,
+      "completeness": 1
+    },
+    {
+      "t": 1255,
+      "completeness": 1
+    },
+    {
+      "t": 1367,
+      "completeness": 1
+    },
+    {
+      "t": 1478,
+      "completeness": 1
+    }
+  ],
+  "t85": 709,
+  "t95": 709,
+  "visIndex": 0.4588
+}

@@ -1,0 +1,34 @@
+{
+  "browser": "firefox",
+  "browser_version": "142.0.1",
+  "id": "png-interlaced",
+  "label": "PNG (Adam7)",
+  "format": "png",
+  "notes": "",
+  "run": 2,
+  "samples": [
+    {
+      "t": 138,
+      "completeness": 1
+    },
+    {
+      "t": 340,
+      "completeness": 1
+    },
+    {
+      "t": 541,
+      "completeness": 1
+    },
+    {
+      "t": 742,
+      "completeness": 1
+    },
+    {
+      "t": 944,
+      "completeness": 1
+    }
+  ],
+  "t85": 138,
+  "t95": 138,
+  "visIndex": 0
+}

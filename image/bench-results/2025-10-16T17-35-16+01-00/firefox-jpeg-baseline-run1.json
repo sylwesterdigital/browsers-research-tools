@@ -1,0 +1,66 @@
+{
+  "browser": "firefox",
+  "browser_version": "142.0.1",
+  "id": "jpeg-baseline",
+  "label": "JPEG Baseline",
+  "format": "jpeg",
+  "notes": "",
+  "run": 1,
+  "samples": [
+    {
+      "t": 173,
+      "completeness": 0
+    },
+    {
+      "t": 284,
+      "completeness": 0
+    },
+    {
+      "t": 390,
+      "completeness": 0
+    },
+    {
+      "t": 500,
+      "completeness": 0
+    },
+    {
+      "t": 617,
+      "completeness": 0
+    },
+    {
+      "t": 733,
+      "completeness": 1
+    },
+    {
+      "t": 847,
+      "completeness": 1
+    },
+    {
+      "t": 962,
+      "completeness": 1
+    },
+    {
+      "t": 1072,
+      "completeness": 1
+    },
+    {
+      "t": 1184,
+      "completeness": 1
+    },
+    {
+      "t": 1296,
+      "completeness": 1
+    },
+    {
+      "t": 1414,
+      "completeness": 1
+    },
+    {
+      "t": 1531,
+      "completeness": 1
+    }
+  ],
+  "t85": 733,
+  "t95": 733,
+  "visIndex": 0.4124
+}

@@ -1,0 +1,70 @@
+{
+  "browser": "firefox",
+  "browser_version": "142.0.1",
+  "id": "avif",
+  "label": "AVIF",
+  "format": "avif",
+  "notes": "",
+  "run": 1,
+  "samples": [
+    {
+      "t": 60,
+      "completeness": 0
+    },
+    {
+      "t": 166,
+      "completeness": 0
+    },
+    {
+      "t": 278,
+      "completeness": 0
+    },
+    {
+      "t": 393,
+      "completeness": 0
+    },
+    {
+      "t": 505,
+      "completeness": 0
+    },
+    {
+      "t": 620,
+      "completeness": 0
+    },
+    {
+      "t": 751,
+      "completeness": 1
+    },
+    {
+      "t": 860,
+      "completeness": 1
+    },
+    {
+      "t": 977,
+      "completeness": 1
+    },
+    {
+      "t": 1094,
+      "completeness": 1
+    },
+    {
+      "t": 1209,
+      "completeness": 1
+    },
+    {
+      "t": 1323,
+      "completeness": 1
+    },
+    {
+      "t": 1439,
+      "completeness": 1
+    },
+    {
+      "t": 1556,
+      "completeness": 1
+    }
+  ],
+  "t85": 751,
+  "t95": 751,
+  "visIndex": 0.4619
+}

@@ -7,13 +7,8 @@
     "throttle": true,
     "latency": 200,
     "downKbps": 750,
-    "upKbps": 250,
-    "server": {
-      "chunkBytes": 16384,
-      "chunkDelayMs": 60
-    }
+    "upKbps": 250
   },
-  "runs": 2,
   "tests": [
     {
       "id": "jpeg-baseline",

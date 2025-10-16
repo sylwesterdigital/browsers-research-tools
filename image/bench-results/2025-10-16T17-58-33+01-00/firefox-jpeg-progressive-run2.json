@@ -1,0 +1,34 @@
+{
+  "browser": "firefox",
+  "browser_version": "142.0.1",
+  "id": "jpeg-progressive",
+  "label": "JPEG Progressive",
+  "format": "jpeg",
+  "notes": "",
+  "run": 2,
+  "samples": [
+    {
+      "t": 144,
+      "completeness": 1
+    },
+    {
+      "t": 337,
+      "completeness": 1
+    },
+    {
+      "t": 527,
+      "completeness": 1
+    },
+    {
+      "t": 718,
+      "completeness": 1
+    },
+    {
+      "t": 911,
+      "completeness": 1
+    }
+  ],
+  "t85": 144,
+  "t95": 144,
+  "visIndex": 0
+}

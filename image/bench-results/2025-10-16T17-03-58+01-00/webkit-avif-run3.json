@@ -1,0 +1,38 @@
+{
+  "browser": "webkit",
+  "browser_version": "26.0",
+  "id": "avif",
+  "label": "AVIF",
+  "format": "avif",
+  "notes": "",
+  "run": 3,
+  "samples": [
+    {
+      "t": 85,
+      "completeness": 1
+    },
+    {
+      "t": 252,
+      "completeness": 1
+    },
+    {
+      "t": 422,
+      "completeness": 1
+    },
+    {
+      "t": 592,
+      "completeness": 1
+    },
+    {
+      "t": 761,
+      "completeness": 1
+    },
+    {
+      "t": 931,
+      "completeness": 1
+    }
+  ],
+  "t85": 85,
+  "t95": 85,
+  "visIndex": 0
+}

@@ -1,0 +1,34 @@
+{
+  "browser": "webkit",
+  "browser_version": "26.0",
+  "id": "jpeg-baseline",
+  "label": "JPEG Baseline",
+  "format": "jpeg",
+  "notes": "",
+  "run": 2,
+  "samples": [
+    {
+      "t": 113,
+      "completeness": 1
+    },
+    {
+      "t": 301,
+      "completeness": 1
+    },
+    {
+      "t": 480,
+      "completeness": 1
+    },
+    {
+      "t": 658,
+      "completeness": 1
+    },
+    {
+      "t": 836,
+      "completeness": 1
+    }
+  ],
+  "t85": 113,
+  "t95": 113,
+  "visIndex": 0
+}

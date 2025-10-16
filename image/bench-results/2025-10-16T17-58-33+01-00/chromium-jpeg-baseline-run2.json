@@ -1,0 +1,130 @@
+{
+  "browser": "chromium",
+  "browser_version": "141.0.7390.37",
+  "id": "jpeg-baseline",
+  "label": "JPEG Baseline",
+  "format": "jpeg",
+  "notes": "",
+  "run": 2,
+  "samples": [
+    {
+      "t": 92,
+      "completeness": 0
+    },
+    {
+      "t": 230,
+      "completeness": 0
+    },
+    {
+      "t": 358,
+      "completeness": 0
+    },
+    {
+      "t": 494,
+      "completeness": 0
+    },
+    {
+      "t": 628,
+      "completeness": 0
+    },
+    {
+      "t": 759,
+      "completeness": 0
+    },
+    {
+      "t": 894,
+      "completeness": 0
+    },
+    {
+      "t": 1028,
+      "completeness": 0
+    },
+    {
+      "t": 1143,
+      "completeness": 0
+    },
+    {
+      "t": 1276,
+      "completeness": 0
+    },
+    {
+      "t": 1411,
+      "completeness": 0
+    },
+    {
+      "t": 1546,
+      "completeness": 0
+    },
+    {
+      "t": 1678,
+      "completeness": 0
+    },
+    {
+      "t": 1811,
+      "completeness": 0
+    },
+    {
+      "t": 1946,
+      "completeness": 0
+    },
+    {
+      "t": 2078,
+      "completeness": 0
+    },
+    {
+      "t": 2213,
+      "completeness": 0
+    },
+    {
+      "t": 2345,
+      "completeness": 1
+    },
+    {
+      "t": 2480,
+      "completeness": 1
+    },
+    {
+      "t": 2613,
+      "completeness": 1
+    },
+    {
+      "t": 2742,
+      "completeness": 1
+    },
+    {
+      "t": 2880,
+      "completeness": 1
+    },
+    {
+      "t": 3029,
+      "completeness": 1
+    },
+    {
+      "t": 3162,
+      "completeness": 1
+    },
+    {
+      "t": 3293,
+      "completeness": 1
+    },
+    {
+      "t": 3429,
+      "completeness": 1
+    },
+    {
+      "t": 3562,
+      "completeness": 1
+    },
+    {
+      "t": 3710,
+      "completeness": 1
+    },
+    {
+      "t": 3848,
+      "completeness": 1
+    }
+  ],
+  "t85": 2345,
+  "t95": 2345,
+  "visIndex": 0.5998
+}

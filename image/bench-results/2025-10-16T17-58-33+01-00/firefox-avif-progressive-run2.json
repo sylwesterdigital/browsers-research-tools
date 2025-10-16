@@ -1,0 +1,34 @@
+{
+  "browser": "firefox",
+  "browser_version": "142.0.1",
+  "id": "avif-progressive",
+  "label": "AVIF (progressive)",
+  "format": "avif",
+  "notes": "single-input progressive",
+  "run": 2,
+  "samples": [
+    {
+      "t": 150,
+      "completeness": 1
+    },
+    {
+      "t": 348,
+      "completeness": 1
+    },
+    {
+      "t": 546,
+      "completeness": 1
+    },
+    {
+      "t": 743,
+      "completeness": 1
+    },
+    {
+      "t": 940,
+      "completeness": 1
+    }
+  ],
+  "t85": 150,
+  "t95": 150,
+  "visIndex": 0
+}

@@ -1,0 +1,142 @@
+{
+  "browser": "chromium",
+  "browser_version": "141.0.7390.37",
+  "id": "webp",
+  "label": "WebP",
+  "format": "webp",
+  "notes": "",
+  "run": 5,
+  "samples": [
+    {
+      "t": 81,
+      "completeness": 0
+    },
+    {
+      "t": 218,
+      "completeness": 0
+    },
+    {
+      "t": 350,
+      "completeness": 0
+    },
+    {
+      "t": 485,
+      "completeness": 0
+    },
+    {
+      "t": 617,
+      "completeness": 0
+    },
+    {
+      "t": 748,
+      "completeness": 0
+    },
+    {
+      "t": 884,
+      "completeness": 0
+    },
+    {
+      "t": 1017,
+      "completeness": 0
+    },
+    {
+      "t": 1150,
+      "completeness": 0
+    },
+    {
+      "t": 1281,
+      "completeness": 0
+    },
+    {
+      "t": 1418,
+      "completeness": 0
+    },
+    {
+      "t": 1550,
+      "completeness": 0
+    },
+    {
+      "t": 1683,
+      "completeness": 0
+    },
+    {
+      "t": 1818,
+      "completeness": 0
+    },
+    {
+      "t": 1950,
+      "completeness": 0
+    },
+    {
+      "t": 2083,
+      "completeness": 0
+    },
+    {
+      "t": 2218,
+      "completeness": 0
+    },
+    {
+      "t": 2350,
+      "completeness": 0
+    },
+    {
+      "t": 2483,
+      "completeness": 0
+    },
+    {
+      "t": 2617,
+      "completeness": 0
+    },
+    {
+      "t": 2751,
+      "completeness": 0
+    },
+    {
+      "t": 2883,
+      "completeness": 0
+    },
+    {
+      "t": 3019,
+      "completeness": 0
+    },
+    {
+      "t": 3168,
+      "completeness": 0
+    },
+    {
+      "t": 3299,
+      "completeness": 1
+    },
+    {
+      "t": 3435,
+      "completeness": 1
+    },
+    {
+      "t": 3567,
+      "completeness": 1
+    },
+    {
+      "t": 3701,
+      "completeness": 1
+    },
+    {
+      "t": 3836,
+      "completeness": 1
+    },
+    {
+      "t": 3965,
+      "completeness": 1
+    },
+    {
+      "t": 4097,
+      "completeness": 1
+    },
+    {
+      "t": 4231,
+      "completeness": 1
+    }
+  ],
+  "t85": 3299,
+  "t95": 3299,
+  "visIndex": 0.7754
+}

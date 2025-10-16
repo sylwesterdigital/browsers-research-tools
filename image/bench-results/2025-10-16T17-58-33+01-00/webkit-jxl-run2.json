@@ -1,0 +1,38 @@
+{
+  "browser": "webkit",
+  "browser_version": "26.0",
+  "id": "jxl",
+  "label": "JPEG XL",
+  "format": "jxl",
+  "notes": "",
+  "run": 2,
+  "samples": [
+    {
+      "t": 107,
+      "completeness": 1
+    },
+    {
+      "t": 289,
+      "completeness": 1
+    },
+    {
+      "t": 458,
+      "completeness": 1
+    },
+    {
+      "t": 625,
+      "completeness": 1
+    },
+    {
+      "t": 792,
+      "completeness": 1
+    },
+    {
+      "t": 962,
+      "completeness": 1
+    }
+  ],
+  "t85": 107,
+  "t95": 107,
+  "visIndex": 0
+}

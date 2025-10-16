@@ -1,0 +1,86 @@
+{
+  "browser": "webkit",
+  "browser_version": "26.0",
+  "id": "jpeg-baseline",
+  "label": "JPEG Baseline",
+  "format": "jpeg",
+  "notes": "",
+  "run": 1,
+  "samples": [
+    {
+      "t": 117,
+      "completeness": 0
+    },
+    {
+      "t": 221,
+      "completeness": 0
+    },
+    {
+      "t": 331,
+      "completeness": 0
+    },
+    {
+      "t": 442,
+      "completeness": 0
+    },
+    {
+      "t": 552,
+      "completeness": 0
+    },
+    {
+      "t": 673,
+      "completeness": 0
+    },
+    {
+      "t": 799,
+      "completeness": 0
+    },
+    {
+      "t": 926,
+      "completeness": 0
+    },
+    {
+      "t": 1052,
+      "completeness": 0
+    },
+    {
+      "t": 1176,
+      "completeness": 0
+    },
+    {
+      "t": 1317,
+      "completeness": 1
+    },
+    {
+      "t": 1428,
+      "completeness": 1
+    },
+    {
+      "t": 1536,
+      "completeness": 1
+    },
+    {
+      "t": 1648,
+      "completeness": 1
+    },
+    {
+      "t": 1760,
+      "completeness": 1
+    },
+    {
+      "t": 1870,
+      "completeness": 1
+    },
+    {
+      "t": 1978,
+      "completeness": 1
+    },
+    {
+      "t": 2088,
+      "completeness": 1
+    }
+  ],
+  "t85": 1317,
+  "t95": 1317,
+  "visIndex": 0.6088
+}

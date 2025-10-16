@@ -1,0 +1,66 @@
+{
+  "browser": "firefox",
+  "browser_version": "142.0.1",
+  "id": "webp",
+  "label": "WebP",
+  "format": "webp",
+  "notes": "",
+  "run": 1,
+  "samples": [
+    {
+      "t": 58,
+      "completeness": 0
+    },
+    {
+      "t": 166,
+      "completeness": 0
+    },
+    {
+      "t": 290,
+      "completeness": 0
+    },
+    {
+      "t": 409,
+      "completeness": 0
+    },
+    {
+      "t": 532,
+      "completeness": 0
+    },
+    {
+      "t": 653,
+      "completeness": 0
+    },
+    {
+      "t": 776,
+      "completeness": 1
+    },
+    {
+      "t": 897,
+      "completeness": 1
+    },
+    {
+      "t": 1018,
+      "completeness": 1
+    },
+    {
+      "t": 1141,
+      "completeness": 1
+    },
+    {
+      "t": 1273,
+      "completeness": 1
+    },
+    {
+      "t": 1397,
+      "completeness": 1
+    },
+    {
+      "t": 1519,
+      "completeness": 1
+    }
+  ],
+  "t85": 776,
+  "t95": 776,
+  "visIndex": 0.4914
+}

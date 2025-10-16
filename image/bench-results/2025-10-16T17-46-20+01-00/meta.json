@@ -1,0 +1,18 @@
+{
+  "system": {
+    "os_type": "Darwin",
+    "os_platform": "darwin",
+    "os_release": "24.1.0",
+    "os_arch": "arm64",
+    "cpu_model": "Apple M2 Pro",
+    "cpu_cores": 12,
+    "memory_gb": 17
+  },
+  "node": "v20.19.4",
+  "versions": {
+    "chromium": "141.0.7390.37",
+    "firefox": "142.0.1",
+    "webkit": "26.0"
+  },
+  "runs": 2
+}

@@ -1,0 +1,38 @@
+{
+  "browser": "webkit",
+  "browser_version": "26.0",
+  "id": "jxl-progressive",
+  "label": "JPEG XL (progressive)",
+  "format": "jxl",
+  "notes": "",
+  "run": 4,
+  "samples": [
+    {
+      "t": 86,
+      "completeness": 1
+    },
+    {
+      "t": 254,
+      "completeness": 1
+    },
+    {
+      "t": 423,
+      "completeness": 1
+    },
+    {
+      "t": 592,
+      "completeness": 1
+    },
+    {
+      "t": 759,
+      "completeness": 1
+    },
+    {
+      "t": 929,
+      "completeness": 1
+    }
+  ],
+  "t85": 86,
+  "t95": 86,
+  "visIndex": 0
+}

@@ -1,0 +1,70 @@
+{
+  "browser": "webkit",
+  "browser_version": "26.0",
+  "id": "jxl-progressive",
+  "label": "JPEG XL (progressive)",
+  "format": "jxl",
+  "notes": "",
+  "run": 1,
+  "samples": [
+    {
+      "t": 59,
+      "completeness": 0
+    },
+    {
+      "t": 163,
+      "completeness": 0
+    },
+    {
+      "t": 271,
+      "completeness": 0
+    },
+    {
+      "t": 381,
+      "completeness": 0
+    },
+    {
+      "t": 489,
+      "completeness": 0
+    },
+    {
+      "t": 655,
+      "completeness": 0
+    },
+    {
+      "t": 773,
+      "completeness": 1
+    },
+    {
+      "t": 877,
+      "completeness": 1
+    },
+    {
+      "t": 987,
+      "completeness": 1
+    },
+    {
+      "t": 1097,
+      "completeness": 1
+    },
+    {
+      "t": 1205,
+      "completeness": 1
+    },
+    {
+      "t": 1315,
+      "completeness": 1
+    },
+    {
+      "t": 1424,
+      "completeness": 1
+    },
+    {
+      "t": 1533,
+      "completeness": 1
+    }
+  ],
+  "t85": 773,
+  "t95": 773,
+  "visIndex": 0.4844
+}

@@ -1,0 +1,34 @@
+{
+  "browser": "firefox",
+  "browser_version": "142.0.1",
+  "id": "jpeg-baseline",
+  "label": "JPEG Baseline",
+  "format": "jpeg",
+  "notes": "",
+  "run": 5,
+  "samples": [
+    {
+      "t": 105,
+      "completeness": 1
+    },
+    {
+      "t": 291,
+      "completeness": 1
+    },
+    {
+      "t": 476,
+      "completeness": 1
+    },
+    {
+      "t": 665,
+      "completeness": 1
+    },
+    {
+      "t": 852,
+      "completeness": 1
+    }
+  ],
+  "t85": 105,
+  "t95": 105,
+  "visIndex": 0
+}

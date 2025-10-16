@@ -1,0 +1,102 @@
+{
+  "browser": "chromium",
+  "browser_version": "141.0.7390.37",
+  "id": "avif",
+  "label": "AVIF",
+  "format": "avif",
+  "notes": "",
+  "run": 2,
+  "samples": [
+    {
+      "t": 95,
+      "completeness": 0
+    },
+    {
+      "t": 231,
+      "completeness": 0
+    },
+    {
+      "t": 377,
+      "completeness": 0
+    },
+    {
+      "t": 512,
+      "completeness": 0
+    },
+    {
+      "t": 646,
+      "completeness": 0
+    },
+    {
+      "t": 780,
+      "completeness": 0
+    },
+    {
+      "t": 913,
+      "completeness": 0
+    },
+    {
+      "t": 1047,
+      "completeness": 0
+    },
+    {
+      "t": 1181,
+      "completeness": 0
+    },
+    {
+      "t": 1312,
+      "completeness": 0
+    },
+    {
+      "t": 1446,
+      "completeness": 0
+    },
+    {
+      "t": 1596,
+      "completeness": 0
+    },
+    {
+      "t": 1730,
+      "completeness": 0
+    },
+    {
+      "t": 1862,
+      "completeness": 0
+    },
+    {
+      "t": 1996,
+      "completeness": 0
+    },
+    {
+      "t": 2127,
+      "completeness": 1
+    },
+    {
+      "t": 2264,
+      "completeness": 1
+    },
+    {
+      "t": 2396,
+      "completeness": 1
+    },
+    {
+      "t": 2528,
+      "completeness": 1
+    },
+    {
+      "t": 2663,
+      "completeness": 1
+    },
+    {
+      "t": 2796,
+      "completeness": 1
+    },
+    {
+      "t": 2930,
+      "completeness": 1
+    }
+  ],
+  "t85": 2127,
+  "t95": 2127,
+  "visIndex": 0.7168
+}

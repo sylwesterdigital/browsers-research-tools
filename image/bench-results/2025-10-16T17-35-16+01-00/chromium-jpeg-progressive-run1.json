@@ -1,0 +1,122 @@
+{
+  "browser": "chromium",
+  "browser_version": "141.0.7390.37",
+  "id": "jpeg-progressive",
+  "label": "JPEG Progressive",
+  "format": "jpeg",
+  "notes": "",
+  "run": 1,
+  "samples": [
+    {
+      "t": 91,
+      "completeness": 0
+    },
+    {
+      "t": 230,
+      "completeness": 0
+    },
+    {
+      "t": 379,
+      "completeness": 0
+    },
+    {
+      "t": 510,
+      "completeness": 0
+    },
+    {
+      "t": 646,
+      "completeness": 0
+    },
+    {
+      "t": 792,
+      "completeness": 0
+    },
+    {
+      "t": 929,
+      "completeness": 0
+    },
+    {
+      "t": 1061,
+      "completeness": 0
+    },
+    {
+      "t": 1195,
+      "completeness": 0
+    },
+    {
+      "t": 1325,
+      "completeness": 1
+    },
+    {
+      "t": 1460,
+      "completeness": 1
+    },
+    {
+      "t": 1594,
+      "completeness": 1
+    },
+    {
+      "t": 1725,
+      "completeness": 1
+    },
+    {
+      "t": 1862,
+      "completeness": 1
+    },
+    {
+      "t": 1996,
+      "completeness": 1
+    },
+    {
+      "t": 2129,
+      "completeness": 1
+    },
+    {
+      "t": 2274,
+      "completeness": 1
+    },
+    {
+      "t": 2412,
+      "completeness": 1
+    },
+    {
+      "t": 2546,
+      "completeness": 1
+    },
+    {
+      "t": 2695,
+      "completeness": 1
+    },
+    {
+      "t": 2829,
+      "completeness": 1
+    },
+    {
+      "t": 2961,
+      "completeness": 1
+    },
+    {
+      "t": 3095,
+      "completeness": 1
+    },
+    {
+      "t": 3228,
+      "completeness": 1
+    },
+    {
+      "t": 3362,
+      "completeness": 1
+    },
+    {
+      "t": 3496,
+      "completeness": 1
+    },
+    {
+      "t": 3627,
+      "completeness": 1
+    }
+  ],
+  "t85": 1325,
+  "t95": 1325,
+  "visIndex": 0.349
+}
