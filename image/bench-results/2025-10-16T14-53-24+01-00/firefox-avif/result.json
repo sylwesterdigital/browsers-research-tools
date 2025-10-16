@@ -1,0 +1,28 @@
+{
+  "browser": "firefox",
+  "id": "avif",
+  "label": "AVIF",
+  "format": "avif",
+  "notes": "",
+  "samples": [
+    {
+      "t": 73,
+      "completeness": 1
+    },
+    {
+      "t": 315,
+      "completeness": 1
+    },
+    {
+      "t": 556,
+      "completeness": 1
+    },
+    {
+      "t": 798,
+      "completeness": 1
+    }
+  ],
+  "t85": 73,
+  "t95": 73,
+  "visIndex": 0
+}

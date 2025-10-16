@@ -1,0 +1,44 @@
+{
+  "browser": "firefox",
+  "id": "avif",
+  "label": "AVIF",
+  "format": "avif",
+  "notes": "",
+  "samples": [
+    {
+      "t": 21,
+      "completeness": 0.8854
+    },
+    {
+      "t": 210,
+      "completeness": 0.8854
+    },
+    {
+      "t": 405,
+      "completeness": 0.8854
+    },
+    {
+      "t": 600,
+      "completeness": 0.8854
+    },
+    {
+      "t": 867,
+      "completeness": 1
+    },
+    {
+      "t": 1116,
+      "completeness": 1
+    },
+    {
+      "t": 1364,
+      "completeness": 1
+    },
+    {
+      "t": 1612,
+      "completeness": 1
+    }
+  ],
+  "t85": 21,
+  "t95": 867,
+  "visIndex": 0.0609
+}

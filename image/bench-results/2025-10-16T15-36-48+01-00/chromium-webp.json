@@ -1,0 +1,84 @@
+{
+  "browser": "chromium",
+  "id": "webp",
+  "label": "WebP",
+  "format": "webp",
+  "notes": "",
+  "samples": [
+    {
+      "t": 47,
+      "completeness": 0.891
+    },
+    {
+      "t": 276,
+      "completeness": 0.891
+    },
+    {
+      "t": 507,
+      "completeness": 0.891
+    },
+    {
+      "t": 744,
+      "completeness": 0.891
+    },
+    {
+      "t": 976,
+      "completeness": 0.891
+    },
+    {
+      "t": 1207,
+      "completeness": 0.891
+    },
+    {
+      "t": 1450,
+      "completeness": 0.8911
+    },
+    {
+      "t": 1685,
+      "completeness": 0.8911
+    },
+    {
+      "t": 1919,
+      "completeness": 0.8911
+    },
+    {
+      "t": 2146,
+      "completeness": 0.8911
+    },
+    {
+      "t": 2402,
+      "completeness": 0.9383
+    },
+    {
+      "t": 2650,
+      "completeness": 0.9383
+    },
+    {
+      "t": 2908,
+      "completeness": 0.9383
+    },
+    {
+      "t": 3168,
+      "completeness": 0.9383
+    },
+    {
+      "t": 3436,
+      "completeness": 1
+    },
+    {
+      "t": 3695,
+      "completeness": 1
+    },
+    {
+      "t": 3963,
+      "completeness": 1
+    },
+    {
+      "t": 4213,
+      "completeness": 1
+    }
+  ],
+  "t85": 47,
+  "t95": 3436,
+  "visIndex": 0.0769
+}

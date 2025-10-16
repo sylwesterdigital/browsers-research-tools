@@ -1,0 +1,70 @@
+{
+  "render": {
+    "bg": "#ffffff",
+    "fit": "contain"
+  },
+  "network": {
+    "throttle": true,
+    "latency": 200,
+    "downKbps": 750,
+    "upKbps": 250
+  },
+  "tests": [
+    {
+      "id": "jpeg-baseline",
+      "label": "JPEG Baseline",
+      "format": "jpeg",
+      "url": "out/source.baseline.jpg",
+      "notes": ""
+    },
+    {
+      "id": "jpeg-progressive",
+      "label": "JPEG Progressive",
+      "format": "jpeg",
+      "url": "out/source.progressive.jpg",
+      "notes": ""
+    },
+    {
+      "id": "webp",
+      "label": "WebP",
+      "format": "webp",
+      "url": "out/source.webp",
+      "notes": ""
+    },
+    {
+      "id": "avif",
+      "label": "AVIF",
+      "format": "avif",
+      "url": "out/source.avif",
+      "notes": ""
+    },
+    {
+      "id": "avif-progressive",
+      "label": "AVIF (progressive)",
+      "format": "avif",
+      "url": "out/source.progressive.avif",
+      "notes": "single-input progressive"
+    },
+    {
+      "id": "jxl",
+      "label": "JPEG XL",
+      "format": "jxl",
+      "url": "out/source.jxl",
+      "notes": ""
+    },
+    {
+      "id": "jxl-progressive",
+      "label": "JPEG XL (progressive)",
+      "format": "jxl",
+      "url": "out/source.progressive.jxl",
+      "notes": ""
+    },
+    {
+      "id": "png-interlaced",
+      "label": "PNG (Adam7)",
+      "format": "png",
+      "url": "out/source.interlaced.png",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "browser": "webkit",
+  "id": "jxl",
+  "label": "JPEG XL",
+  "format": "jxl",
+  "notes": "",
+  "samples": [
+    {
+      "t": 16,
+      "completeness": 0.8859
+    },
+    {
+      "t": 198,
+      "completeness": 0.8859
+    },
+    {
+      "t": 392,
+      "completeness": 0.8859
+    },
+    {
+      "t": 679,
+      "completeness": 0.8859
+    },
+    {
+      "t": 915,
+      "completeness": 1
+    },
+    {
+      "t": 1147,
+      "completeness": 1
+    },
+    {
+      "t": 1381,
+      "completeness": 1
+    },
+    {
+      "t": 1615,
+      "completeness": 1
+    }
+  ],
+  "t85": 16,
+  "t95": 915,
+  "visIndex": 0.0642
+}

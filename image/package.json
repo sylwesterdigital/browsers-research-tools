@@ -1,0 +1,26 @@
+{
+  "name": "image",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "date-fns": "^4.1.0",
+    "fs-extra": "^11.3.2",
+    "open": "^10.2.0",
+    "pixelmatch": "^7.1.0",
+    "playwright": "^1.56.0",
+    "pngjs": "^7.0.0"
+  },
+  "dependencies": {
+    "graceful-fs": "^4.2.11",
+    "jsonfile": "^6.2.0",
+    "playwright-core": "^1.56.0",
+    "universalify": "^2.0.1"
+  },
+  "description": ""
+}

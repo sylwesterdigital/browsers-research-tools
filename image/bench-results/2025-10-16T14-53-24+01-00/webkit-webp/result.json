@@ -1,0 +1,28 @@
+{
+  "browser": "webkit",
+  "id": "webp",
+  "label": "WebP",
+  "format": "webp",
+  "notes": "",
+  "samples": [
+    {
+      "t": 74,
+      "completeness": 1
+    },
+    {
+      "t": 313,
+      "completeness": 1
+    },
+    {
+      "t": 552,
+      "completeness": 1
+    },
+    {
+      "t": 791,
+      "completeness": 1
+    }
+  ],
+  "t85": 74,
+  "t95": 74,
+  "visIndex": 0
+}
