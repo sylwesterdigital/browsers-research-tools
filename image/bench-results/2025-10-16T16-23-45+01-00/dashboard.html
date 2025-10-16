@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Progressive Image Bench – 2025-10-16T16-23-45+01-00</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<style>
+body { font: 14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui; margin: 20px; }
+h1 { font-size: 20px; margin: 0 0 8px; }
+.grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.card { padding: 12px; border: 1px solid #e3e3e3; border-radius: 10px; background: #fff; }
+.table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.table th, .table td { border-bottom: 1px solid #eee; padding: 6px 8px; text-align: left; }
+.bad { color: #b00; font-weight: 600; }
+.small { color:#666; font-size:12px; }
+.meta { font-size: 12px; color:#333; white-space: pre-wrap; }
+.kv { display:flex; flex-wrap:wrap; gap:10px; }
+.kv div { background:#f7f7f7; border-radius:8px; padding:6px 8px; }
+</style>
+</head>
+<body>
+<h1>Progressive Image Bench – 2025-10-16T16-23-45+01-00</h1>
+<div class="small">Config: <code>bench.config.json</code></div>
+
+<div class="card">
+  <div id="meta"></div>
+</div>
+
+<div class="grid">
+  <div class="card"><div id="t85"></div></div>
+  <div class="card"><div id="t95"></div></div>
+  <div class="card"><div id="vindex"></div></div>
+  <div class="card">
+    <table class="table" id="summary"></table>
+  </div>
+</div>
+
+<script>
+const results = [{"browser":"chromium","browser_version":"141.0.7390.37","id":"jpeg-baseline","label":"JPEG Baseline","format":"jpeg","notes":"","samples":[{"t":85,"completeness":0.8843},{"t":327,"completeness":0.8843},{"t":558,"completeness":0.8843},{"t":786,"completeness":0.8843},{"t":1006,"completeness":0.8843},{"t":1243,"completeness":0.8843},{"t":1506,"completeness":0.8905},{"t":1754,"completeness":0.8905},{"t":1980,"completeness":0.8905},{"t":2224,"completeness":0.8905},{"t":2500,"completeness":0.9528},{"t":2755,"completeness":0.9528},{"t":2989,"completeness":0.9528},{"t":3225,"completeness":0.9528},{"t":3501,"completeness":0.9998},{"t":3752,"completeness":0.9998},{"t":4032,"completeness":1},{"t":4315,"completeness":1}],"t85":85,"t95":2500,"visIndex":0.0758},{"browser":"chromium","browser_version":"141.0.7390.37","id":"jpeg-progressive","label":"JPEG Progressive","format":"jpeg","notes":"","samples":[{"t":43,"completeness":0.8843},{"t":271,"completeness":0.8843},{"t":508,"completeness":0.8844},{"t":743,"completeness":0.8844},{"t":974,"completeness":0.8844},{"t":1211,"completeness":0.8844},{"t":1499,"completeness":0.9987},{"t":1784,"completeness":0.9987},{"t":2068,"completeness":0.9987},{"t":2339,"completeness":0.9987},{"t":2621,"completeness":0.9999},{"t":2917,"completeness":0.9999},{"t":3191,"completeness":0.9999},{"t":3484,"completeness":1},{"t":3759,"completeness":1},{"t":4047,"completeness":1},{"t":4328,"completeness":1}],"t85":43,"t95":1499,"visIndex":0.0397},{"browser":"chromium","browser_version":"141.0.7390.37","id":"webp","label":"WebP","format":"webp","notes":"","samples":[{"t":44,"completeness":0.8909},{"t":273,"completeness":0.8909},{"t":505,"completeness":0.8909},{"t":740,"completeness":0.8909},{"t":973,"completeness":0.8909},{"t":1207,"completeness":0.8909},{"t":1449,"completeness":0.8909},{"t":1686,"completeness":0.8909},{"t":1917,"completeness":0.8909},{"t":2149,"completeness":0.8909},{"t":2388,"completeness":0.9382},{"t":2629,"completeness":0.9382},{"t":2867,"completeness":0.9382},{"t":3112,"completeness":0.9382},{"t":3397,"completeness":1},{"t":3660,"completeness":1},{"t":3923,"completeness":1},{"t":4174,"completeness":1}],"t85":44,"t95":3397,"visIndex":0.077},{"browser":"chromium","browser_version":"141.0.7390.37","id":"avif","label":"AVIF","format":"avif","notes":"","samples":[{"t":60,"completeness":1},{"t":267,"completeness":1},{"t":503,"completeness":1},{"t":736,"completeness":1},{"t":967,"completeness":1},{"t":1203,"completeness":1},{"t":1436,"completeness":1},{"t":1671,"completeness":1},{"t":1905,"completeness":1},{"t":2120,"completeness":1}],"t85":60,"t95":60,"visIndex":0},{"browser":"chromium","browser_version":"141.0.7390.37","id":"avif-progressive","label":"AVIF (progressive)","format":"avif","notes":"single-input progressive","samples":[{"t":55,"completeness":0.8854},{"t":265,"completeness":0.8854},{"t":502,"completeness":0.8854},{"t":734,"completeness":0.8854},{"t":967,"completeness":0.8854},{"t":1202,"completeness":0.8854},{"t":1461,"completeness":1},{"t":1695,"completeness":1},{"t":1932,"completeness":1},{"t":2182,"completeness":1},{"t":2433,"completeness":1},{"t":2683,"completeness":1},{"t":2935,"completeness":1},{"t":3181,"completeness":1},{"t":3412,"completeness":1},{"t":3647,"completeness":1},{"t":3900,"completeness":1},{"t":4127,"completeness":1},{"t":4362,"completeness":1},{"t":4597,"completeness":1},{"t":4830,"completeness":1}],"t85":55,"t95":1461,"visIndex":0.0337},{"browser":"chromium","browser_version":"141.0.7390.37","id":"jxl","label":"JPEG XL","format":"jxl","notes":"","samples":[{"t":59,"completeness":0.9998},{"t":289,"completeness":0.9998},{"t":519,"completeness":1},{"t":756,"completeness":1},{"t":988,"completeness":1},{"t":1223,"completeness":1},{"t":1452,"completeness":1},{"t":1688,"completeness":1},{"t":1922,"completeness":1},{"t":2156,"completeness":1},{"t":2388,"completeness":1},{"t":2602,"completeness":1},{"t":2840,"completeness":1},{"t":3073,"completeness":1},{"t":3305,"completeness":1},{"t":3539,"completeness":1},{"t":3768,"completeness":1},{"t":4006,"completeness":1},{"t":4239,"completeness":1},{"t":4472,"completeness":1},{"t":4684,"completeness":1},{"t":4922,"completeness":1},{"t":5156,"completeness":1},{"t":5396,"completeness":1},{"t":5619,"completeness":1},{"t":5852,"completeness":1},{"t":6070,"completeness":1},{"t":6303,"completeness":1},{"t":6537,"completeness":1},{"t":6773,"completeness":1},{"t":7005,"completeness":1},{"t":7239,"completeness":1},{"t":7470,"completeness":1},{"t":7706,"completeness":1},{"t":7939,"completeness":1}],"t85":59,"t95":59,"visIndex":0},{"browser":"chromium","browser_version":"141.0.7390.37","id":"jxl-progressive","label":"JPEG XL (progressive)","format":"jxl","notes":"","samples":[{"t":47,"completeness":0.9998},{"t":265,"completeness":0.9998},{"t":486,"completeness":1},{"t":722,"completeness":1},{"t":955,"completeness":1},{"t":1190,"completeness":1},{"t":1426,"completeness":1},{"t":1657,"completeness":1},{"t":1894,"completeness":1},{"t":2125,"completeness":1},{"t":2357,"completeness":1},{"t":2591,"completeness":1},{"t":2823,"completeness":1},{"t":3056,"completeness":1},{"t":3290,"completeness":1},{"t":3524,"completeness":1},{"t":3758,"completeness":1},{"t":3991,"completeness":1},{"t":4224,"completeness":1},{"t":4458,"completeness":1},{"t":4690,"completeness":1},{"t":4925,"completeness":1},{"t":5158,"completeness":1},{"t":5391,"completeness":1},{"t":5628,"completeness":1},{"t":5835,"completeness":1},{"t":6078,"completeness":1},{"t":6301,"completeness":1},{"t":6544,"completeness":1},{"t":6776,"completeness":1},{"t":7009,"completeness":1},{"t":7223,"completeness":1},{"t":7460,"completeness":1},{"t":7692,"completeness":1},{"t":7931,"completeness":1}],"t85":47,"t95":47,"visIndex":0},{"browser":"chromium","browser_version":"141.0.7390.37","id":"png-interlaced","label":"PNG (Adam7)","format":"png","notes":"","samples":[{"t":54,"completeness":1},{"t":282,"completeness":1},{"t":497,"completeness":1},{"t":697,"completeness":1},{"t":932,"completeness":1},{"t":1166,"completeness":1},{"t":1400,"completeness":1},{"t":1638,"completeness":1},{"t":1868,"completeness":1},{"t":2104,"completeness":1},{"t":2342,"completeness":1},{"t":2568,"completeness":1},{"t":2803,"completeness":1},{"t":3039,"completeness":1},{"t":3268,"completeness":1},{"t":3503,"completeness":1},{"t":3738,"completeness":1},{"t":3971,"completeness":1},{"t":4199,"completeness":1},{"t":4440,"completeness":1},{"t":4672,"completeness":1},{"t":4905,"completeness":1},{"t":5139,"completeness":1},{"t":5372,"completeness":1},{"t":5609,"completeness":1},{"t":5841,"completeness":1},{"t":6072,"completeness":1},{"t":6303,"completeness":1},{"t":6542,"completeness":1},{"t":6777,"completeness":1},{"t":7007,"completeness":1},{"t":7240,"completeness":1},{"t":7477,"completeness":1},{"t":7708,"completeness":1},{"t":7946,"completeness":1}],"t85":54,"t95":54,"visIndex":0},{"browser":"firefox","browser_version":"142.0.1","id":"jpeg-baseline","label":"JPEG Baseline","format":"jpeg","notes":"","samples":[{"t":178,"completeness":0.8841},{"t":369,"completeness":0.8843},{"t":578,"completeness":0.8898},{"t":802,"completeness":0.9197},{"t":1031,"completeness":0.9548},{"t":1268,"completeness":0.987},{"t":1509,"completeness":0.9998},{"t":1757,"completeness":1},{"t":2004,"completeness":1},{"t":2249,"completeness":1}],"t85":178,"t95":1031,"visIndex":0.0499},{"browser":"firefox","browser_version":"142.0.1","id":"jpeg-progressive","label":"JPEG Progressive","format":"jpeg","notes":"","samples":[{"t":22,"completeness":0.8842},{"t":273,"completeness":0.9999},{"t":518,"completeness":1},{"t":764,"completeness":1},{"t":1009,"completeness":1},{"t":1257,"completeness":1}],"t85":22,"t95":273,"visIndex":0.0236},{"browser":"firefox","browser_version":"142.0.1","id":"webp","label":"WebP","format":"webp","notes":"","samples":[{"t":20,"completeness":0.8845},{"t":213,"completeness":0.8845},{"t":418,"completeness":0.8846},{"t":631,"completeness":0.8994},{"t":856,"completeness":0.9309},{"t":1088,"completeness":0.9661},{"t":1328,"completeness":0.9951},{"t":1570,"completeness":0.9999},{"t":1818,"completeness":1},{"t":2066,"completeness":1},{"t":2313,"completeness":1}],"t85":20,"t95":1088,"visIndex":0.0517},{"browser":"firefox","browser_version":"142.0.1","id":"avif","label":"AVIF","format":"avif","notes":"","samples":[{"t":18,"completeness":0.8854},{"t":195,"completeness":0.8854},{"t":533,"completeness":0.8854},{"t":810,"completeness":1},{"t":1058,"completeness":1},{"t":1310,"completeness":1},{"t":1560,"completeness":1}],"t85":18,"t95":810,"visIndex":0.0589},{"browser":"firefox","browser_version":"142.0.1","id":"avif-progressive","label":"AVIF (progressive)","format":"avif","notes":"single-input progressive","samples":[{"t":18,"completeness":0.8851},{"t":206,"completeness":0.8851},{"t":403,"completeness":0.8851},{"t":598,"completeness":0.8851},{"t":792,"completeness":0.8851},{"t":986,"completeness":0.8851},{"t":1182,"completeness":0.8851},{"t":1377,"completeness":0.8851},{"t":1571,"completeness":0.8851},{"t":1851,"completeness":1},{"t":2097,"completeness":1},{"t":2344,"completeness":1},{"t":2593,"completeness":1}],"t85":18,"t95":1851,"visIndex":0.0818},{"browser":"firefox","browser_version":"142.0.1","id":"jxl","label":"JPEG XL","format":"jxl","notes":"","samples":[{"t":22,"completeness":0.9999},{"t":215,"completeness":1},{"t":411,"completeness":1},{"t":607,"completeness":1},{"t":804,"completeness":1},{"t":1002,"completeness":1},{"t":1201,"completeness":1},{"t":1401,"completeness":1},{"t":1598,"completeness":1},{"t":1795,"completeness":1},{"t":1991,"completeness":1},{"t":2188,"completeness":1},{"t":2383,"completeness":1},{"t":2580,"completeness":1},{"t":2780,"completeness":1},{"t":2978,"completeness":1},{"t":3174,"completeness":1},{"t":3372,"completeness":1},{"t":3569,"completeness":1},{"t":3766,"completeness":1},{"t":3965,"completeness":1},{"t":4163,"completeness":1},{"t":4360,"completeness":1},{"t":4558,"completeness":1},{"t":4756,"completeness":1},{"t":4953,"completeness":1},{"t":5151,"completeness":1},{"t":5349,"completeness":1},{"t":5545,"completeness":1},{"t":5742,"completeness":1},{"t":5939,"completeness":1},{"t":6134,"completeness":1},{"t":6316,"completeness":1},{"t":6512,"completeness":1},{"t":6708,"completeness":1},{"t":6906,"completeness":1},{"t":7104,"completeness":1},{"t":7301,"completeness":1},{"t":7499,"completeness":1},{"t":7697,"completeness":1},{"t":7893,"completeness":1}],"t85":22,"t95":22,"visIndex":0},{"browser":"firefox","browser_version":"142.0.1","id":"jxl-progressive","label":"JPEG XL (progressive)","format":"jxl","notes":"","samples":[{"t":18,"completeness":0.9998},{"t":209,"completeness":1},{"t":405,"completeness":1},{"t":602,"completeness":1},{"t":801,"completeness":1},{"t":997,"completeness":1},{"t":1193,"completeness":1},{"t":1391,"completeness":1},{"t":1587,"completeness":1},{"t":1783,"completeness":1},{"t":1980,"completeness":1},{"t":2175,"completeness":1},{"t":2374,"completeness":1},{"t":2570,"completeness":1},{"t":2766,"completeness":1},{"t":2964,"completeness":1},{"t":3159,"completeness":1},{"t":3357,"completeness":1},{"t":3553,"completeness":1},{"t":3751,"completeness":1},{"t":3947,"completeness":1},{"t":4143,"completeness":1},{"t":4342,"completeness":1},{"t":4539,"completeness":1},{"t":4735,"completeness":1},{"t":4931,"completeness":1},{"t":5128,"completeness":1},{"t":5325,"completeness":1},{"t":5521,"completeness":1},{"t":5718,"completeness":1},{"t":5916,"completeness":1},{"t":6113,"completeness":1},{"t":6312,"completeness":1},{"t":6505,"completeness":1},{"t":6692,"completeness":1},{"t":6888,"completeness":1},{"t":7084,"completeness":1},{"t":7280,"completeness":1},{"t":7477,"completeness":1},{"t":7674,"completeness":1},{"t":7869,"completeness":1},{"t":8066,"completeness":1}],"t85":18,"t95":18,"visIndex":0},{"browser":"firefox","browser_version":"142.0.1","id":"png-interlaced","label":"PNG (Adam7)","format":"png","notes":"","samples":[{"t":21,"completeness":0.9296},{"t":198,"completeness":0.9296},{"t":382,"completeness":0.9296},{"t":563,"completeness":0.9296},{"t":748,"completeness":0.9296},{"t":938,"completeness":0.9297},{"t":1124,"completeness":0.9297},{"t":1314,"completeness":0.9297},{"t":1504,"completeness":0.9297},{"t":1704,"completeness":0.9297},{"t":1902,"completeness":0.9297},{"t":2107,"completeness":0.9297},{"t":2311,"completeness":0.9297},{"t":2515,"completeness":0.9297},{"t":2723,"completeness":0.9298},{"t":2927,"completeness":0.93},{"t":3135,"completeness":0.9309},{"t":3344,"completeness":0.9325},{"t":3555,"completeness":0.9343},{"t":3766,"completeness":0.9363},{"t":3977,"completeness":0.9385},{"t":4191,"completeness":0.9411},{"t":4406,"completeness":0.9436},{"t":4619,"completeness":0.9462},{"t":4836,"completeness":0.9493},{"t":5050,"completeness":0.9525},{"t":5266,"completeness":0.9556},{"t":5485,"completeness":0.9587},{"t":5704,"completeness":0.9619},{"t":5924,"completeness":0.9655},{"t":6147,"completeness":0.9691},{"t":6365,"completeness":0.9726},{"t":6585,"completeness":0.9768},{"t":6807,"completeness":0.9807},{"t":7031,"completeness":0.9849},{"t":7258,"completeness":0.9885},{"t":7479,"completeness":0.9923},{"t":7705,"completeness":0.9962},{"t":7930,"completeness":1}],"t85":21,"t95":5050,"visIndex":0.052},{"browser":"webkit","browser_version":"26.0","id":"jpeg-baseline","label":"JPEG Baseline","format":"jpeg","notes":"","samples":[{"t":38,"completeness":0.8851},{"t":227,"completeness":0.8851},{"t":418,"completeness":0.8851},{"t":629,"completeness":0.9098},{"t":845,"completeness":0.9098},{"t":1061,"completeness":0.9098},{"t":1274,"completeness":0.9098},{"t":1529,"completeness":1},{"t":1762,"completeness":1},{"t":1993,"completeness":1},{"t":2223,"completeness":1}],"t85":38,"t95":1529,"visIndex":0.0682},{"browser":"webkit","browser_version":"26.0","id":"jpeg-progressive","label":"JPEG Progressive","format":"jpeg","notes":"","samples":[{"t":16,"completeness":0.8851},{"t":201,"completeness":0.8851},{"t":392,"completeness":0.8851},{"t":659,"completeness":1},{"t":904,"completeness":1},{"t":1148,"completeness":1},{"t":1391,"completeness":1}],"t85":16,"t95":659,"visIndex":0.0537},{"browser":"webkit","browser_version":"26.0","id":"webp","label":"WebP","format":"webp","notes":"","samples":[{"t":16,"completeness":0.8851},{"t":203,"completeness":0.8851},{"t":391,"completeness":0.8851},{"t":582,"completeness":0.8851},{"t":772,"completeness":0.8851},{"t":962,"completeness":0.8851},{"t":1152,"completeness":0.8851},{"t":1344,"completeness":0.8851},{"t":1584,"completeness":1},{"t":1819,"completeness":1},{"t":2053,"completeness":1},{"t":2287,"completeness":1}],"t85":16,"t95":1584,"visIndex":0.0793},{"browser":"webkit","browser_version":"26.0","id":"avif","label":"AVIF","format":"avif","notes":"","samples":[{"t":16,"completeness":0.8855},{"t":202,"completeness":0.8855},{"t":390,"completeness":0.8855},{"t":599,"completeness":0.8855},{"t":839,"completeness":1},{"t":1072,"completeness":1},{"t":1306,"completeness":1},{"t":1539,"completeness":1}],"t85":16,"t95":839,"visIndex":0.0619},{"browser":"webkit","browser_version":"26.0","id":"avif-progressive","label":"AVIF (progressive)","format":"avif","notes":"single-input progressive","samples":[{"t":17,"completeness":0.8856},{"t":200,"completeness":0.8856},{"t":388,"completeness":0.8856},{"t":597,"completeness":0.8856},{"t":796,"completeness":0.8856},{"t":997,"completeness":0.8856},{"t":1197,"completeness":0.8856},{"t":1397,"completeness":0.8856},{"t":1598,"completeness":0.8856},{"t":1871,"completeness":1},{"t":2106,"completeness":1},{"t":2337,"completeness":1},{"t":2570,"completeness":1}],"t85":17,"t95":1871,"visIndex":0.0831},{"browser":"webkit","browser_version":"26.0","id":"jxl","label":"JPEG XL","format":"jxl","notes":"","samples":[{"t":14,"completeness":0.8859},{"t":198,"completeness":0.8859},{"t":387,"completeness":0.8859},{"t":674,"completeness":0.8859},{"t":911,"completeness":1},{"t":1143,"completeness":1},{"t":1375,"completeness":1},{"t":1609,"completeness":1}],"t85":14,"t95":911,"visIndex":0.0642},{"browser":"webkit","browser_version":"26.0","id":"jxl-progressive","label":"JPEG XL (progressive)","format":"jxl","notes":"","samples":[{"t":16,"completeness":0.8859},{"t":201,"completeness":0.8859},{"t":390,"completeness":0.8859},{"t":689,"completeness":0.8859},{"t":927,"completeness":1},{"t":1160,"completeness":1},{"t":1392,"completeness":1},{"t":1624,"completeness":1}],"t85":16,"t95":927,"visIndex":0.0646},{"browser":"webkit","browser_version":"26.0","id":"png-interlaced","label":"PNG (Adam7)","format":"png","notes":"","samples":[{"t":16,"completeness":0.9806},{"t":203,"completeness":0.9806},{"t":391,"completeness":0.9806},{"t":590,"completeness":0.9806},{"t":791,"completeness":0.9806},{"t":993,"completeness":0.9806},{"t":1194,"completeness":0.9806},{"t":1393,"completeness":0.9806},{"t":1596,"completeness":0.9806},{"t":1802,"completeness":0.9806},{"t":2006,"completeness":0.9806},{"t":2211,"completeness":0.9806},{"t":2417,"completeness":0.9806},{"t":2622,"completeness":0.9806},{"t":2829,"completeness":0.9806},{"t":3032,"completeness":0.9806},{"t":3236,"completeness":0.9806},{"t":3443,"completeness":0.9806},{"t":3646,"completeness":0.9806},{"t":3852,"completeness":0.9806},{"t":4058,"completeness":0.9806},{"t":4263,"completeness":0.9806},{"t":4467,"completeness":0.9806},{"t":4669,"completeness":0.9806},{"t":4874,"completeness":0.9806},{"t":5097,"completeness":1},{"t":5316,"completeness":1},{"t":5535,"completeness":1},{"t":5752,"completeness":1},{"t":5972,"completeness":1},{"t":6188,"completeness":1},{"t":6409,"completeness":1},{"t":6626,"completeness":1},{"t":6844,"completeness":1},{"t":7062,"completeness":1},{"t":7282,"completeness":1},{"t":7501,"completeness":1},{"t":7720,"completeness":1},{"t":7941,"completeness":1}],"t85":16,"t95":16,"visIndex":0.0124}];
+const meta = {"system":{"os_type":"Darwin","os_platform":"darwin","os_release":"24.1.0","os_arch":"arm64","cpu_model":"Apple M2 Pro","cpu_cores":12,"memory_gb":17},"node":"v20.19.4","versions":{"chromium":"141.0.7390.37","firefox":"142.0.1","webkit":"26.0"}};
+
+function groupBy(arr, key) {
+  return arr.reduce((m, x) => ((m[x[key]] ||= []).push(x), m), {});
+}
+
+function renderMeta() {
+  const mount = document.getElementById('meta');
+  const sys = meta.system;
+  const vers = meta.versions;
+  const osLine = sys.os_type + " " + sys.os_release + " (" + sys.os_platform + ", " + sys.os_arch + ")";
+  const hwLine = sys.cpu_model + " ×" + sys.cpu_cores + " • " + sys.memory_gb + " GB RAM";
+  const nodeLine = "Node " + meta.node;
+  const browserLines = Object.entries(vers).map(([k,v]) => k + ": " + v).join(" • ");
+  mount.innerHTML = '<div class="kv">'
+    + '<div><b>OS</b>: ' + osLine + '</div>'
+    + '<div><b>HW</b>: ' + hwLine + '</div>'
+    + '<div><b>Node</b>: ' + nodeLine + '</div>'
+    + '<div><b>Browsers</b>: ' + browserLines + '</div>'
+    + '</div>';
+}
+
+function drawBars(metricKey, elId, title, yTitle) {
+  const groups = groupBy(results, 'browser');
+  const traces = [];
+  const ids = [...new Set(results.map(r => r.id))];
+  for (const [browser, rows] of Object.entries(groups)) {
+    const ordered = ids.map(id => rows.find(r => r.id === id) || {});
+    traces.push({
+      x: ids,
+      // Keep visIndex as a float; round integer metrics only. Avoid NaN/null bars.
+      y: ordered.map(r => {
+        const v = r?.[metricKey];
+        if (v == null || Number.isNaN(Number(v))) return null;
+        return metricKey === 'visIndex' ? Number(v) : Math.round(Number(v));
+      }),
+      name: browser,
+      type: 'bar'
+    });
+  }
+  const isVI = metricKey === 'visIndex'; // format axis for small floats
+  Plotly.newPlot(elId, traces, {
+    title, barmode:'group',
+    xaxis: { title: 'Test' },
+    yaxis: { title: yTitle, rangemode: 'tozero', tickformat: isVI ? '.3f' : undefined },
+    margin: { t: 40, r: 10, b: 60, l: 50 },
+  }, {displaylogo:false, responsive:true});
+}
+
+function drawTable() {
+  const headers = ["browser","browser_version","id","label","format","t85","t95","visual_index","notes","error"];
+  const tbl = document.getElementById('summary');
+  const thead = document.createElement('thead'); const trh = document.createElement('tr');
+  headers.forEach(h => { const th = document.createElement('th'); th.textContent = h; trh.appendChild(th); });
+  thead.appendChild(trh);
+  const tbody = document.createElement('tbody');
+  results.forEach(r => {
+    const tr = document.createElement('tr');
+    headers.forEach(h => {
+      const td = document.createElement('td');
+      let v = r[h];
+      if (h === 't85' || h === 't95') v = (v==null || isNaN(v)) ? "" : Math.round(v);
+      if (h === 'visual_index') v = (v==null || isNaN(v)) ? "" : (+v).toFixed(3);
+      if (h === 'error' && v) td.className = 'bad';
+      td.textContent = v ?? "";
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  tbl.appendChild(thead); tbl.appendChild(tbody);
+}
+
+renderMeta();
+drawBars('t85', 't85', 'Time to 85% (ms)', 'ms');
+drawBars('t95', 't95', 'Time to 95% (ms)', 'ms');
+drawBars('visIndex', 'vindex', 'Visual Index (lower better)', 'index');
+drawTable();
+</script>
+</body>
+</html>

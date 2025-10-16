@@ -1,0 +1,61 @@
+{
+  "browser": "webkit",
+  "browser_version": "26.0",
+  "id": "webp",
+  "label": "WebP",
+  "format": "webp",
+  "notes": "",
+  "samples": [
+    {
+      "t": 16,
+      "completeness": 0.8851
+    },
+    {
+      "t": 203,
+      "completeness": 0.8851
+    },
+    {
+      "t": 391,
+      "completeness": 0.8851
+    },
+    {
+      "t": 582,
+      "completeness": 0.8851
+    },
+    {
+      "t": 772,
+      "completeness": 0.8851
+    },
+    {
+      "t": 962,
+      "completeness": 0.8851
+    },
+    {
+      "t": 1152,
+      "completeness": 0.8851
+    },
+    {
+      "t": 1344,
+      "completeness": 0.8851
+    },
+    {
+      "t": 1584,
+      "completeness": 1
+    },
+    {
+      "t": 1819,
+      "completeness": 1
+    },
+    {
+      "t": 2053,
+      "completeness": 1
+    },
+    {
+      "t": 2287,
+      "completeness": 1
+    }
+  ],
+  "t85": 16,
+  "t95": 1584,
+  "visIndex": 0.0793
+}

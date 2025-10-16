@@ -1,0 +1,41 @@
+{
+  "browser": "webkit",
+  "browser_version": "26.0",
+  "id": "jpeg-progressive",
+  "label": "JPEG Progressive",
+  "format": "jpeg",
+  "notes": "",
+  "samples": [
+    {
+      "t": 16,
+      "completeness": 0.8851
+    },
+    {
+      "t": 201,
+      "completeness": 0.8851
+    },
+    {
+      "t": 392,
+      "completeness": 0.8851
+    },
+    {
+      "t": 659,
+      "completeness": 1
+    },
+    {
+      "t": 904,
+      "completeness": 1
+    },
+    {
+      "t": 1148,
+      "completeness": 1
+    },
+    {
+      "t": 1391,
+      "completeness": 1
+    }
+  ],
+  "t85": 16,
+  "t95": 659,
+  "visIndex": 0.0537
+}

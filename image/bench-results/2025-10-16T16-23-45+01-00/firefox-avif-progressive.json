@@ -1,0 +1,65 @@
+{
+  "browser": "firefox",
+  "browser_version": "142.0.1",
+  "id": "avif-progressive",
+  "label": "AVIF (progressive)",
+  "format": "avif",
+  "notes": "single-input progressive",
+  "samples": [
+    {
+      "t": 18,
+      "completeness": 0.8851
+    },
+    {
+      "t": 206,
+      "completeness": 0.8851
+    },
+    {
+      "t": 403,
+      "completeness": 0.8851
+    },
+    {
+      "t": 598,
+      "completeness": 0.8851
+    },
+    {
+      "t": 792,
+      "completeness": 0.8851
+    },
+    {
+      "t": 986,
+      "completeness": 0.8851
+    },
+    {
+      "t": 1182,
+      "completeness": 0.8851
+    },
+    {
+      "t": 1377,
+      "completeness": 0.8851
+    },
+    {
+      "t": 1571,
+      "completeness": 0.8851
+    },
+    {
+      "t": 1851,
+      "completeness": 1
+    },
+    {
+      "t": 2097,
+      "completeness": 1
+    },
+    {
+      "t": 2344,
+      "completeness": 1
+    },
+    {
+      "t": 2593,
+      "completeness": 1
+    }
+  ],
+  "t85": 18,
+  "t95": 1851,
+  "visIndex": 0.0818
+}

@@ -1,0 +1,85 @@
+{
+  "browser": "chromium",
+  "browser_version": "141.0.7390.37",
+  "id": "webp",
+  "label": "WebP",
+  "format": "webp",
+  "notes": "",
+  "samples": [
+    {
+      "t": 44,
+      "completeness": 0.8909
+    },
+    {
+      "t": 273,
+      "completeness": 0.8909
+    },
+    {
+      "t": 505,
+      "completeness": 0.8909
+    },
+    {
+      "t": 740,
+      "completeness": 0.8909
+    },
+    {
+      "t": 973,
+      "completeness": 0.8909
+    },
+    {
+      "t": 1207,
+      "completeness": 0.8909
+    },
+    {
+      "t": 1449,
+      "completeness": 0.8909
+    },
+    {
+      "t": 1686,
+      "completeness": 0.8909
+    },
+    {
+      "t": 1917,
+      "completeness": 0.8909
+    },
+    {
+      "t": 2149,
+      "completeness": 0.8909
+    },
+    {
+      "t": 2388,
+      "completeness": 0.9382
+    },
+    {
+      "t": 2629,
+      "completeness": 0.9382
+    },
+    {
+      "t": 2867,
+      "completeness": 0.9382
+    },
+    {
+      "t": 3112,
+      "completeness": 0.9382
+    },
+    {
+      "t": 3397,
+      "completeness": 1
+    },
+    {
+      "t": 3660,
+      "completeness": 1
+    },
+    {
+      "t": 3923,
+      "completeness": 1
+    },
+    {
+      "t": 4174,
+      "completeness": 1
+    }
+  ],
+  "t85": 44,
+  "t95": 3397,
+  "visIndex": 0.077
+}

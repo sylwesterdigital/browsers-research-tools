@@ -25,6 +25,7 @@ import pixelmatch from "pixelmatch";
 import { PNG } from "pngjs";
 import { formatISO } from "date-fns";
 import { execFile } from "node:child_process";
+import os from "os"; // NEW: capture hardware/OS metadata
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -87,8 +88,7 @@ function startThrottledServer({ port = 0, chunkBytes = 16 * 1024, chunkDelayMs =
       stream.on("end", () => res.end());
       stream.on("error", () => {
         if (!res.headersSent) { res.statusCode = 500; res.end("Error"); }
-        else { try { res.end(); } catch {}
-        }
+        else { try { res.end(); } catch {} }
       });
     } catch {
       if (!res.headersSent) { res.statusCode = 500; res.end("Error"); }
@@ -195,8 +195,10 @@ async function runOne(page, url, opts) {
 function n(v){ return (v==null || Number.isNaN(v)) ? "" : Math.round(Number(v)); }
 
 /* ------------------------ Dashboard HTML ------------------------ */
-function buildDashboardHTML({ stamp, configName, results }) {
+/* UPDATED: accepts a 'meta' object and displays environment + per-browser versions */
+function buildDashboardHTML({ stamp, configName, results, meta }) {
   const data = JSON.stringify(results);
+  const env = JSON.stringify(meta);
   return `<!doctype html>
 <html>
 <head>
@@ -213,11 +215,18 @@ h1 { font-size: 20px; margin: 0 0 8px; }
 .table th, .table td { border-bottom: 1px solid #eee; padding: 6px 8px; text-align: left; }
 .bad { color: #b00; font-weight: 600; }
 .small { color:#666; font-size:12px; }
+.meta { font-size: 12px; color:#333; white-space: pre-wrap; }
+.kv { display:flex; flex-wrap:wrap; gap:10px; }
+.kv div { background:#f7f7f7; border-radius:8px; padding:6px 8px; }
 </style>
 </head>
 <body>
 <h1>Progressive Image Bench – ${stamp}</h1>
 <div class="small">Config: <code>${configName}</code></div>
+
+<div class="card">
+  <div id="meta"></div>
+</div>
 
 <div class="grid">
   <div class="card"><div id="t85"></div></div>
@@ -230,9 +239,26 @@ h1 { font-size: 20px; margin: 0 0 8px; }
 
 <script>
 const results = ${data};
+const meta = ${env};
 
 function groupBy(arr, key) {
   return arr.reduce((m, x) => ((m[x[key]] ||= []).push(x), m), {});
+}
+
+function renderMeta() {
+  const mount = document.getElementById('meta');
+  const sys = meta.system;
+  const vers = meta.versions;
+  const osLine = sys.os_type + " " + sys.os_release + " (" + sys.os_platform + ", " + sys.os_arch + ")";
+  const hwLine = sys.cpu_model + " ×" + sys.cpu_cores + " • " + sys.memory_gb + " GB RAM";
+  const nodeLine = "Node " + meta.node;
+  const browserLines = Object.entries(vers).map(([k,v]) => k + ": " + v).join(" • ");
+  mount.innerHTML = '<div class="kv">'
+    + '<div><b>OS</b>: ' + osLine + '</div>'
+    + '<div><b>HW</b>: ' + hwLine + '</div>'
+    + '<div><b>Node</b>: ' + nodeLine + '</div>'
+    + '<div><b>Browsers</b>: ' + browserLines + '</div>'
+    + '</div>';
 }
 
 function drawBars(metricKey, elId, title, yTitle) {
@@ -243,21 +269,27 @@ function drawBars(metricKey, elId, title, yTitle) {
     const ordered = ids.map(id => rows.find(r => r.id === id) || {});
     traces.push({
       x: ids,
-      y: ordered.map(r => r[metricKey] != null ? Math.round(r[metricKey]) : null),
+      // Keep visIndex as a float; round integer metrics only. Avoid NaN/null bars.
+      y: ordered.map(r => {
+        const v = r?.[metricKey];
+        if (v == null || Number.isNaN(Number(v))) return null;
+        return metricKey === 'visIndex' ? Number(v) : Math.round(Number(v));
+      }),
       name: browser,
       type: 'bar'
     });
   }
+  const isVI = metricKey === 'visIndex'; // format axis for small floats
   Plotly.newPlot(elId, traces, {
     title, barmode:'group',
     xaxis: { title: 'Test' },
-    yaxis: { title: yTitle },
+    yaxis: { title: yTitle, rangemode: 'tozero', tickformat: isVI ? '.3f' : undefined },
     margin: { t: 40, r: 10, b: 60, l: 50 },
   }, {displaylogo:false, responsive:true});
 }
 
 function drawTable() {
-  const headers = ["browser","id","label","format","t85","t95","visual_index","notes","error"];
+  const headers = ["browser","browser_version","id","label","format","t85","t95","visual_index","notes","error"];
   const tbl = document.getElementById('summary');
   const thead = document.createElement('thead'); const trh = document.createElement('tr');
   headers.forEach(h => { const th = document.createElement('th'); th.textContent = h; trh.appendChild(th); });
@@ -279,6 +311,7 @@ function drawTable() {
   tbl.appendChild(thead); tbl.appendChild(tbody);
 }
 
+renderMeta();
 drawBars('t85', 't85', 'Time to 85% (ms)', 'ms');
 drawBars('t95', 't95', 'Time to 95% (ms)', 'ms');
 drawBars('visIndex', 'vindex', 'Visual Index (lower better)', 'index');
@@ -296,6 +329,21 @@ drawTable();
   await fs.mkdirp(runDir);
   await fs.writeJson(path.join(runDir, "config.used.json"), config, { spaces: 2 });
 
+  // NEW: collect run metadata (hardware, OS, Node)
+  const RUN_META = {
+    system: {
+      os_type: os.type(),
+      os_platform: os.platform(),
+      os_release: os.release(),
+      os_arch: os.arch(),
+      cpu_model: (os.cpus()?.[0]?.model) || "unknown",
+      cpu_cores: (os.cpus()?.length) || 0,
+      memory_gb: Math.round(os.totalmem() / 1e9)
+    },
+    node: process.version,
+    versions: {} // filled per-browser below
+  };
+
   // 1) Start internal throttled server
   const { server, port } = await startThrottledServer({
     port: 0,
@@ -311,6 +359,10 @@ drawTable();
   for (const { name: browserName, launcher } of BROWSERS) {
     console.log(`\n==> ${browserName.toUpperCase()} ===================`);
     const b = await launcher.launch({ headless: false });
+    // NEW: capture Playwright browser version string
+    const browserVersion = b.version();
+    RUN_META.versions[browserName] = browserVersion;
+
     const ctx = await b.newContext({
       viewport: DEFAULT_VIEWPORT,
       deviceScaleFactor: DEFAULT_VIEWPORT.deviceScaleFactor,
@@ -344,7 +396,7 @@ drawTable();
       const fullURL = /^https?:\/\//i.test(url) ? url : `${baseURL}/${url.replace(/^\//, "")}`;
       console.log(`  • ${id} – ${label || url}`);
 
-      const r = { browser: browserName, id, label, format, notes };
+      const r = { browser: browserName, browser_version: browserVersion, id, label, format, notes };
       try {
         const res = await runOne(page, fullURL, config.render || {});
         Object.assign(r, res);
@@ -361,14 +413,17 @@ drawTable();
   }
 
   // 3) Write CSV and Dashboard, then open dashboard
-  const headers = ["browser","id","label","format","t85","t95","visIndex","notes","error"];
+  const headers = ["browser","browser_version","id","label","format","t85","t95","visIndex","notes","error"];
   const rows = [headers.join(",")].concat(results.map(r =>
-    [r.browser, r.id, csvQ(r.label), r.format, n(r.t85), n(r.t95), r.visIndex ?? "", csvQ(r.notes), csvQ(r.error||"")].join(",")
+    [r.browser, csvQ(r.browser_version), r.id, csvQ(r.label), r.format, n(r.t85), n(r.t95), r.visIndex ?? "", csvQ(r.notes), csvQ(r.error||"")].join(",")
   ));
   const csvPath = path.join(runDir, "summary.csv");
   await fs.writeFile(csvPath, rows.join("\n"), "utf8");
 
-  const dashHTML = buildDashboardHTML({ stamp, configName: path.basename(cfgPath), results });
+  // NEW: persist meta alongside artifacts
+  await fs.writeJson(path.join(runDir, "meta.json"), RUN_META, { spaces: 2 });
+
+  const dashHTML = buildDashboardHTML({ stamp, configName: path.basename(cfgPath), results, meta: RUN_META });
   const dashPath = path.join(runDir, "dashboard.html");
   await fs.writeFile(dashPath, dashHTML, "utf8");
 
@@ -378,8 +433,8 @@ drawTable();
   const opener = process.platform === "darwin" ? "open"
                : process.platform === "win32" ? "cmd"
                : "xdg-open";
-  const args = process.platform === "win32" ? ["/c", "start", "", dashPath] : [dashPath];
-  execFile(opener, args, err => { if (err) console.error("Open dashboard error:", err.message); });
+  const argsOpen = process.platform === "win32" ? ["/c", "start", "", dashPath] : [dashPath];
+  execFile(opener, argsOpen, err => { if (err) console.error("Open dashboard error:", err.message); });
 
   // 4) Stop server
   server.close();
