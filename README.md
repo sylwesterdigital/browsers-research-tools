@@ -1,39 +1,64 @@
-# ABOUT
+# ABOUT BROWSERS RESEARCH - TOOLS
 
 ## What this is
 
 A small toolkit to **generate image variants** (baseline/progressive encodings), **run cross-browser progressive-render benchmarks** (Chromium, Firefox, WebKit), and **visualize results** in an interactive dashboard.
 
-Use cases:
+Use it to:
 
-* Validate assumptions about progressive rendering (JPEG, WebP, AVIF, JXL).
+* Validate assumptions about progressive rendering (JPEG, WebP, AVIF, JXL, PNG Adam7).
 * Compare engines (Chromium/Firefox/WebKit) on the same assets.
-* Produce reproducible metrics (t85/t95/Visual Index) and a human-readable report.
+* Produce **reproducible metrics** (t85 / t95 / Visual Index) with **multiple runs**, medians, and distribution box-plots.
+* Capture **hardware/OS/browser versions** for comparability.
 
-<img width="1355" height="1141" alt="Screenshot 2025-10-16 at 22 39 10" src="https://github.com/user-attachments/assets/8e7e3156-7edc-4a15-9453-7574f0652ed4" />
+# Example output
+  <img width="1209" height="1141" alt="Screenshot 2025-10-16 at 22 49 20" src="https://github.com/user-attachments/assets/0ae212e6-a77f-4d9d-90d4-11bd779a4b7e" />
+
+
+
+---
+
+## What it measures
+
+* **t85 / t95** — Time to reach 85% / 95% visual similarity to the final frame (ms).
+* **Visual Index** — The average “incompleteness” over load time (0–1, **lower is better**).
+* Metrics are computed over **N runs** (default 5) with **median + p10/p90** and per-run distributions.
+
+The runner:
+
+* Drives headed Playwright (Chromium, Firefox, WebKit).
+* Shows a single `<img>` on a neutral page; screenshots the **image area only** at ~100–120 ms cadence.
+* Computes similarity via `pixelmatch(current, final)`.
+* Uses an **internal chunked server** to trigger progressive paint; optional **Chromium CDP throttling**.
+* Records server byte/timestamp traces.
 
 ---
 
 ## Components
 
-* `make-variants-config.sh`
-  Bash script that encodes one source image into:
+* **`make-variants-config.sh`**
+  Encodes one source image into:
 
   * JPEG **baseline** & **progressive**
   * WebP
-  * AVIF (+ **progressive**/layered)
+  * AVIF (+ **progressive/layered**)
   * JPEG XL (+ **progressive**, if `cjxl` installed)
   * PNG Adam7 (interlaced)
-    It then **writes a matching `bench.config.json`** pointing at the generated files.
+    Then writes a matching **`bench.config.json`** pointing at the generated files.
 
-* `progressive-image-bench-ui.mjs`
-  Single Node script that:
+* **`progressive-image-bench3.mjs`**
+  One Node script that:
 
-  * starts an **internal throttled HTTP server** (chunked streaming) to trigger progressive paint,
-  * runs **headed Playwright** across Chromium, Firefox, and WebKit,
-  * measures **visual completeness over time** and computes **t85 / t95 / Visual Index**,
-  * writes `bench-results/<timestamp>/{summary.csv,dashboard.html,...}`,
-  * opens an interactive **Plotly** dashboard.
+  * Starts an **internal throttled HTTP server** (chunked streaming).
+  * Runs **headed** Chromium, Firefox, WebKit.
+  * Captures visual timelines, computes **t85/t95/Visual Index**.
+  * Repeats each test for **N runs** (CLI/config/env selectable).
+  * Aggregates (median/p10/p90), writes CSV + JSON artifacts.
+  * Opens an interactive **Plotly** dashboard with:
+
+    * **Top row**: 3 grouped **bar** charts (median t85, t95, Visual Index) — exactly **three bars per test** (one per browser).
+    * **Bottom row**: 3 **box-plots** (per-run distributions) for t85, t95, Visual Index.
+    * **Environment banner** (OS/CPU/RAM/Node + browser versions + #runs).
 
 ---
 
@@ -49,7 +74,9 @@ npm i -D playwright pixelmatch pngjs fs-extra date-fns
 npx playwright install
 ```
 
-> `jpeg-xl` is optional—if missing, JXL outputs/tests are skipped.
+> `jpeg-xl` is optional — if missing, JXL outputs/tests are skipped.
+
+Linux/Windows work too; install the equivalent packages (ImageMagick, libwebp/cwebp, libavif/avifenc, cjxl, jq, Node 18+).
 
 ---
 
@@ -57,122 +84,150 @@ npx playwright install
 
 ### 1) Generate variants + config
 
-From the repo root (the folder containing `image/files/source.png` for example):
+From the repo root (the folder containing your source image):
 
 ```bash
 ./make-variants-config.sh ./image/files/source.png out bench.config.json
 ```
 
-Environment knobs (optional):
+Optional encoders/labels:
 
 ```bash
-QJPEG=82 QWEBP=82 QAVIF=40 QJXL=1.2 LABEL_PREFIX="[test] " ./make-variants-config.sh ./image/files/source.png out bench.config.json
+QJPEG=82 QWEBP=82 QAVIF=40 QJXL=1.2 LABEL_PREFIX="[test] " \
+  ./make-variants-config.sh ./image/files/source.png out bench.config.json
 ```
 
-* Outputs go to `out/` (e.g., `source.baseline.jpg`, `source.progressive.jpg`, `source.webp`, `source.avif`, `source.progressive.avif`, `source.jxl`, `source.progressive.jxl`, `source.interlaced.png`).
-* `bench.config.json` is created to reference those files.
+Outputs go to `out/` (e.g., `source.baseline.jpg`, `source.progressive.jpg`, `source.webp`, `source.avif`, `source.progressive.avif`, `source.jxl`, `source.progressive.jxl`, `source.interlaced.png`).
+`bench.config.json` references those files.
 
-**Absolute URLs instead of relative:**
-Start an external server and set `BASE_URL`, e.g.:
+**Absolute URLs instead of relative:** start your own server and set `BASE_URL`:
 
 ```bash
-python3 -m http.server 5173  # serve the repo folder
+python3 -m http.server 5173   # serve the repo folder
 BASE_URL="http://127.0.0.1:5173" ./make-variants-config.sh ./image/files/source.png out bench.config.json
 ```
 
-### 2) Run the benchmarks with UI and dashboard
+### 2) Run the benchmarks with the UI dashboard
 
-**Single-terminal run** using the script’s internal server (recommended):
-
-```bash
-node progressive-image-bench-ui.mjs bench.config.json --root /absolute/path/to/repo
-```
-
-* Three headed browser windows will load each image (watch the progressive stages).
-* Results are saved under `bench-results/<timestamp>/`.
-* A Plotly **dashboard** opens automatically.
-
-**Using absolute URLs (external server):**
+Using the built-in server (recommended):
 
 ```bash
-node progressive-image-bench-ui.mjs bench.config.json
+node progressive-image-bench3.mjs bench.config.json --root /absolute/path/to/repo
 ```
 
----
+Control run count:
 
-## Methods (how metrics are computed)
+```bash
+node progressive-image-bench3.mjs bench.config.json --root "$(pwd)" --runs 7
+# or: RUNS=7 node progressive-image-bench3.mjs bench.config.json --root "$(pwd)"
+# or: set "runs": 7 in bench.config.json
+```
 
-* The page shows a single `<img>` centered on a neutral background.
-* A **timeline of full-page screenshots** is captured at ~120 ms cadence.
-* **Visual completeness** per frame = similarity(current, final) via `pixelmatch`.
-* Metrics:
+Using external absolute URLs:
 
-  * **t85**: time to reach 85% visual completeness.
-  * **t95**: time to reach 95% visual completeness.
-  * **Visual Index**: area under the curve of “incompleteness” over time (lower is better).
-* Network:
+```bash
+node progressive-image-bench3.mjs bench.config.json
+```
 
-  * An internal Node server **streams chunked responses** without `Content-Length` and with a small per-chunk delay to enable progressive paint.
-  * Optional **Chromium CDP throttling** simulates constrained bandwidth/latency; WebKit/Firefox rely on server chunking.
-
----
-
-## Reading results
-
-* `bench-results/<timestamp>/dashboard.html` — interactive chart:
-
-  * Grouped bar charts for **t85**, **t95**, and **Visual Index** by browser and test id.
-  * A summary table with **browser, id, label, format, t85, t95, visual_index, notes, error**.
-* `bench-results/<timestamp>/summary.csv` — same data in CSV form.
-* Per-test JSON dumps for downstream analysis: `bench-results/<timestamp>/<browser>-<id>.json`.
+The script opens `bench-results/<timestamp>/dashboard.html` automatically.
+All artifacts are saved under that timestamped folder.
 
 ---
 
-## Typical findings to validate
+## Config reference (`bench.config.json`)
 
-These reflect common observations the suite is designed to verify—actual outcomes depend on encodes, servers, and browser versions:
+```json
+{
+  "render": { "bg": "#ffffff", "fit": "contain" },
+  "network": {
+    "throttle": true,
+    "latency": 200,
+    "downKbps": 750,
+    "upKbps": 250,
+    "server": { "chunkBytes": 16384, "chunkDelayMs": 60 }
+  },
+  "runs": 5,
+  "tests": [
+    { "id": "jpeg-baseline",     "label": "JPEG Baseline",            "format": "jpeg", "url": "out/source.baseline.jpg",        "notes": "" },
+    { "id": "jpeg-progressive",  "label": "JPEG Progressive",         "format": "jpeg", "url": "out/source.progressive.jpg",     "notes": "" },
+    { "id": "webp",              "label": "WebP",                      "format": "webp", "url": "out/source.webp",                "notes": "" },
+    { "id": "avif",              "label": "AVIF",                      "format": "avif", "url": "out/source.avif",                "notes": "" },
+    { "id": "avif-progressive",  "label": "AVIF (progressive)",        "format": "avif", "url": "out/source.progressive.avif",    "notes": "single-input progressive" },
+    { "id": "jxl",               "label": "JPEG XL",                   "format": "jxl",  "url": "out/source.jxl",                 "notes": "" },
+    { "id": "jxl-progressive",   "label": "JPEG XL (progressive)",     "format": "jxl",  "url": "out/source.progressive.jxl",     "notes": "" },
+    { "id": "png-interlaced",    "label": "PNG (Adam7)",               "format": "png",  "url": "out/source.interlaced.png",      "notes": "" }
+  ]
+}
+```
 
-* **JPEG progressive vs baseline**: progressive usually shows earlier perceived detail; verify **lower t85/VisualIndex** for progressive.
-* **WebP**: no “progressive flag”, but **incremental decoding** can still show early paint if data arrives in chunks.
-* **AVIF**: **progressive/layered** encodes can reduce t85 in supporting engines; compare `avif` vs `avif-progressive`.
-* **JPEG XL**: supports progressive DC/AC refinement; confirm with `jxl` vs `jxl-progressive` if the decoder enables progressive display.
+**Runs precedence:** CLI `--runs` → env `RUNS` → `config.runs` → default `5`.
+**Server:** `server.chunkBytes` + `server.chunkDelayMs` control chunk size and pacing; the server omits `Content-Length` and streams to enable progressive paint.
+**Throttling:** Chromium can be further throttled via CDP using `network.throttle/latency/downKbps/upKbps`. Firefox/WebKit rely on the server’s chunking.
+
+---
+
+## Output artifacts
+
+Inside `bench-results/<timestamp>/`:
+
+* `dashboard.html` — interactive Plotly dashboard.
+* `summary.csv` — per browser/test aggregated metrics:
+
+  * `median_t85/p10_t85/p90_t85`, `median_t95/p10_t95/p90_t95`, `median_visIndex/p10_visIndex/p90_visIndex`.
+* `meta.json` — OS/CPU/RAM/Node, browser versions, `runs`.
+* `per-run.json` — every single run’s raw metrics and run number.
+* `aggregated.json` — aggregated stats per (browser, test).
+* `server.traces.json` — chunk timing/byte counts per request.
+* Per-run JSON files like `chromium-jpeg-progressive-run3.json`.
+
+---
+
+## How to read the charts
+
+* **Top row (bars)** — medians across runs. You should always see **three bars** per test (Chromium, Firefox, WebKit).
+  Lower bars are better for all three charts (t85, t95, Visual Index).
+* **Bottom row (box-plots)** — distributions of all runs per browser/test.
+  Boxes show quartiles; the line is median; whiskers approximate range; dots are outliers.
+  Box-plots are **not “from zero” bars** — they sit at the measured values.
+
+---
+
+## Methods (details)
+
+1. Load a page that centers the test image on a neutral background.
+2. Capture **image-area screenshots** repeatedly (~100–120 ms).
+3. For each frame, compute similarity to the final frame using `pixelmatch` and treat that as **visual completeness**.
+4. Derive:
+
+   * **t85** / **t95** — first timestamps where completeness ≥ 0.85 / 0.95.
+   * **Visual Index** — time-normalized area above the completeness curve (lower = faster convergence).
+5. Repeat for **N runs**, aggregate medians and p10/p90, and chart both **medians** and **distributions**.
 
 ---
 
 ## Repro tips
 
-* Use the **same source image** across formats and the **same pixel dimensions**.
-* Turn off caches by default (the runner injects `Cache-Control: no-cache`).
-* Keep server **chunk sizes** and delays consistent across runs.
-* For “over-the-wire” realism, prefer the built-in server; external static servers often buffer and defeat progressive paint.
+* Use the **same source image** across formats and keep dimensions equal.
+* Caching is disabled by injected `Cache-Control: no-cache`.
+* Keep server **chunk settings** stable between experiments.
+* Prefer the built-in server; many static servers buffer and defeat progressive paint.
+* Share `meta.json` alongside charts so others can compare devices/browsers.
 
 ---
 
 ## Troubleshooting
 
-* **Dashboard didn’t open**: open `bench-results/<timestamp>/dashboard.html` manually.
-* **ERR_HTTP_HEADERS_SENT**: use the provided `startThrottledServer` (sends headers once).
-* **No progressive effect**: ensure images are served without `Content-Length` and with chunked streaming; avoid CDN buffering.
-* **WebKit vs Safari differences**: Playwright WebKit ≈ Safari, but not identical. For strict Safari results, run a companion safaridriver/WebDriver harness on macOS.
+* **Charts look overlapped or vanish on resize**
+  The dashboard sets explicit heights and resizes plots on container changes. If you embed it elsewhere, keep the `.card`/`.plot` structure intact.
 
----
+* **No progressive effect**
+  Ensure responses are **chunked** (no `Content-Length`) and your CDN/proxy isn’t buffering.
 
-## Folder layout (suggested)
+* **Dashboard didn’t open**
+  Open `bench-results/<timestamp>/dashboard.html` manually.
 
-```
-.
-├─ make-variants-config.sh
-├─ progressive-image-bench-ui.mjs
-├─ bench.config.json                # generated or hand-edited
-├─ out/                              # generated image variants
-└─ bench-results/
-   └─ 2025-10-16T14-53-24+01-00/
-      ├─ config.used.json
-      ├─ summary.csv
-      ├─ dashboard.html
-      ├─ chromium-jpeg-progressive.json
-      └─ ...
-```
+* **WebKit vs Safari**
+  Playwright WebKit ≈ Safari but not identical. For strict Safari, use safaridriver on macOS.
 
 ---
 
@@ -182,27 +237,15 @@ These reflect common observations the suite is designed to verify—actual outco
 # 1) Generate
 ./make-variants-config.sh ./image/files/source.png out bench.config.json
 
-# 2) Run with internal server (relative URLs)
-node progressive-image-bench-ui.mjs bench.config.json --root "$(pwd)"
+# 2) Run with internal server (relative URLs) and 7 runs
+node progressive-image-bench3.mjs bench.config.json --root "$(pwd)" --runs 7
 
 # 3) View results
-open bench-results/*/dashboard.html  # macOS
+open bench-results/*/dashboard.html   # macOS
 ```
-
----
-
-## Extending
-
-* Add more test cases to `bench.config.json` (e.g., different qualities, dimensions).
-* Pin server knobs by editing `progressive-image-bench-ui.mjs`:
-
-  * `chunkBytes` (default 16 KiB), `chunkDelayMs` (default 60 ms).
-* Export more metrics (e.g., **t50**, **first-render**) by extending `computeVisualProgress`.
-* Integrate into CI by running headless and archiving `bench-results/` artifacts (dashboard still opens locally when run headed).
 
 ---
 
 ## License
 
-MIT (or add your preferred license).
-
+MIT (or your preferred license).
