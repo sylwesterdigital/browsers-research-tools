@@ -1,6 +1,13 @@
 # browsers-research-tools
 Tools to test the browsers
 
+<img width="723" height="563" alt="Screenshot 2025-10-16 at 15 41 05" src="https://github.com/user-attachments/assets/c245f176-8e4c-49aa-b756-25e77206217a" />
+<img width="714" height="504" alt="Screenshot 2025-10-16 at 15 41 12" src="https://github.com/user-attachments/assets/accec264-3ac9-4928-9bad-c81defce75b5" />
+<img width="707" height="497" alt="Screenshot 2025-10-16 at 15 41 17" src="https://github.com/user-attachments/assets/3952f6c2-a7ab-4bb6-b33e-65d402343a5e" />
+<img width="710" height="1101" alt="Screenshot 2025-10-16 at 15 41 26" src="https://github.com/user-attachments/assets/4a30dbd0-a635-4aae-a0a4-438389746c27" />
+
+
+
 
 Single-file, cross-browser Playwright script that:
 
